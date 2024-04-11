@@ -1,5 +1,7 @@
 import styles from './BodyScreen1.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
+
+
 import capaMain from '../../assets/capa-slider-main.jpg'
 
 export default function BodyScreen1() {
@@ -14,10 +16,10 @@ export default function BodyScreen1() {
 
         <section className={styles.BodyMain}>
             <Swiper
+                pagination={{clickable:true,}}
                 slidesPerView={1}
-                pagination={{clickable:true}}
-                navigation
-
+                onAutoplayStart={3000}
+                
             >
                 {dataImages.map((item) => (
                     <SwiperSlide key={item.id}>

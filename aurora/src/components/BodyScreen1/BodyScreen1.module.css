@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     background-size: cover;
-    height: 400px;
+    height: 300px;
 }
 
 .MainBodyContent{
@@ -20,12 +20,6 @@
     margin-right: 20px;
 }
 
-
-  .spanSlide{
-    padding: 20px;
-    background: #000;
-    color: #000000
-  }
   
 
   @media (max-width:768px) {
