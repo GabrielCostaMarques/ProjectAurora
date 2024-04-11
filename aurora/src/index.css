@@ -1,0 +1,51 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  ---global-body-color: #FFFEE0;
+  ---global-font-color:#000;
+  ---global-element-color:#3C7D45;
+  ---global-element-secundary-color:#B6E8B7;
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0 !important;
+}
+
+section{
+  padding-top: 15em;
+  margin: 0;
+  background-color: var(---global-body-color)
+}
+
+h1,h2,h3,h4,h5,p,a {
+  line-height: 1.1;
+  color: var(---global-font-color);
+}
+
+h1{
+  font-size: 3.9em;
+}
+
+button {
+
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(---global-element-color);
+  color: var(---global-font-color);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  transition: 0.5s;
+}
+
+button:hover{
+  background-color: transparent;
+  border-color: var(---global-element-color);
+  color: var(---global-element-color);
+  transition: 0.5s;
+}
