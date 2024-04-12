@@ -1,6 +1,7 @@
 import styles from './BodyScreen1.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
+import {Autoplay, EffectFade} from "swiper/modules"
+import "swiper/css/effect-fade"
 
 import capaMain from '../../assets/capa-slider-main.jpg'
 
@@ -18,8 +19,9 @@ export default function BodyScreen1() {
             <Swiper
                 pagination={{clickable:true,}}
                 slidesPerView={1}
-                onAutoplayStart={3000}
-                
+                modules={[Autoplay,EffectFade]}
+                autoplay={{delay:5000,disableOnInteraction:false}}
+                effect="fade"
             >
                 {dataImages.map((item) => (
                     <SwiperSlide key={item.id}>
