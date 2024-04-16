@@ -3,14 +3,15 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import {Autoplay, EffectFade} from "swiper/modules"
 import "swiper/css/effect-fade"
 
-import capaMain from '../../assets/capa-slider-main.jpg'
+import slideImages from '../../assets/imges-export'
 
 export default function BodyScreen1() {
 
     const dataImages = [
-        { id: 1, image: `${capaMain}`},
-        { id: 2, image: "https://manualdoagente.com.br/wp-content/uploads/2024/04/Banner-hero-al-ut-V3-scaled.jpg" },
-        { id: 3, image: "https://manualdoagente.com.br/wp-content/uploads/2024/04/Banner-hero-al-ut-V3-scaled.jpg" }
+        { id: 1, image: `${slideImages.image1}`},
+        { id: 2, image: `${slideImages.image2}`},
+        { id: 3, image: `${slideImages.image3}`},
+        
     ]
 
     return (
