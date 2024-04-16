@@ -15,14 +15,13 @@
 }
 
 .ItemProduct {
-    border: 1px solid rgba(182,232,183);
-    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.02);
     height: 300px;
     width: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s;
+    transition: 0.2s;
     scale: 1.0;
     box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.06);
     padding: 10px;
@@ -40,9 +39,9 @@
   &:hover{
     scale: 0.95;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
     box-shadow: none;
-    border: 1px solid rgb(182, 232, 183,0.7);
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   & .BlockNamePrice{
