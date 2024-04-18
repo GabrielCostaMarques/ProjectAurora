@@ -9,6 +9,9 @@ export default function ProductsTable() {
         {name:"Bolsa Preta",price:99.99,image:images.image4},
         {name:"Bolsa Preta",price:99.99,image:images.image4},
         {name:"Bolsa Preta",price:99.99,image:images.image4},
+        {name:"Bolsa Preta",price:99.99,image:images.image4},
+        {name:"Bolsa Preta",price:99.99,image:images.image4},
+        {name:"Bolsa Preta",price:99.99,image:images.image4},
     ]
     return (
 
