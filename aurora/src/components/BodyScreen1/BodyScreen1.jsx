@@ -6,7 +6,7 @@ import "swiper/css/effect-fade"
 import slideImages from '../../assets/imges-export'
 
 export default function BodyScreen1() {
-
+// Fake api para os slides
     const dataImages = [
         { id: 1, image: `${slideImages.image1}`},
         { id: 2, image: `${slideImages.image2}`},
@@ -37,3 +37,4 @@ export default function BodyScreen1() {
 
     )
 }
+
