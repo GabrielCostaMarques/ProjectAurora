@@ -3,7 +3,7 @@ section{
 }
 
 .headerContent{
-    margin-top: -9px;
+    margin-top: 10px;
     padding-top: 50px;
     width: 100%;
     display: flex;
@@ -11,6 +11,7 @@ section{
     height: 10px;
     position: fixed;
     z-index: 10;
+    align-items: center;
   }
 
   .boxLogo{
@@ -27,7 +28,7 @@ section{
         width: 100%;
         text-align: center;
         display: inline-block;
-        
+
         cursor: pointer;
   }
   
@@ -60,3 +61,12 @@ section{
     a:hover::after {
       transform: scaleX(1);
     }
+
+.buyCar{
+  width:40px;
+  height:40px;
+  margin-right: 50px;
+  position: fixed;
+  margin-left: 95%;
+  cursor: pointer;
+}
