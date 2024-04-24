@@ -3,14 +3,17 @@ import images from "../../assets/imges-export"
 
 export default function ProductsTable() {
 
-    const products=[
-
-        {name:"Bolsa Preta",price:99.99,image:images.image4},
-        {name:"Bolsa Preta",price:99.99,image:images.image4},
-        {name:"Bolsa Preta",price:99.99,image:images.image4},
-        {name:"Bolsa Preta",price:99.99,image:images.image4},
-
+    const products = [
+        { name: "Bolsa Preta", price: 99.99, image: images.image4 },
+        { name: "Bolsa Preta", price: 99.99, image: images.image4 },
+        { name: "Bolsa Preta", price: 99.99, image: images.image4 },
+        { name: "Bolsa Preta", price: 99.99, image: images.image4 },
     ]
+
+
+
+
+
     return (
 
         <section className={styles.BodyProducts}>

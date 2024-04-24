@@ -8,9 +8,9 @@ import slideImages from '../../assets/imges-export'
 export default function BodyScreen1() {
 
     const dataImages = [
-        { id: 1, image: `${slideImages.image1}`},
-        { id: 2, image: `${slideImages.image2}`},
-        { id: 3, image: `${slideImages.image3}`},
+        { id: 0, image: `${slideImages.image1}`},
+        { id: 1, image: `${slideImages.image2}`},
+        { id: 2, image: `${slideImages.image3}`},
         
     ]
 
