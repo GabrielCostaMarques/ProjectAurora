@@ -1,0 +1,50 @@
+.BodyProducts {
+  display: block;
+
+  width: 100%;
+
+  & h2 {
+    text-align: center;
+  }
+}
+
+.TableMain{
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+
+.ItemProduct {
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    height: 300px;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    scale: 1.0;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.06);
+    padding: 10px;
+
+
+  & img{
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+  }
+  & h4{
+    color: var(---global-element-color);
+  }
+
+  &:hover{
+    scale: 0.98;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  & .BlockNamePrice{
+    text-align: center;
+  }
+}

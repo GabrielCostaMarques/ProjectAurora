@@ -1,0 +1,24 @@
+.ImgParallax{
+    background: url("../../assets/capa-cta-login.jpg");
+    background-position-y: center;
+    background-attachment: fixed;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    & h3{
+        color: var(---global-body-color);
+    }
+
+    & button{
+        color: var(---global-body-color);
+    }
+
+    & button:hover{
+        border: 1px solid var(---global-body-color);
+        color: var(---global-body-color);
+    }
+}
