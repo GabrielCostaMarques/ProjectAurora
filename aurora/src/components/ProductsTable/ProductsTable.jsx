@@ -1,19 +1,6 @@
 import styles from './ProductsTable.module.css'
-import images from "../../assets/imges-export"
 
-export default function ProductsTable() {
-
-    const products = [
-        { name: "Bolsa Preta", price: 99.99, image: images.image4 },
-        { name: "Bolsa Preta", price: 99.99, image: images.image4 },
-        { name: "Bolsa Preta", price: 99.99, image: images.image4 },
-        { name: "Bolsa Preta", price: 99.99, image: images.image4 },
-    ]
-
-
-
-
-
+export default function ProductsTable({ name, price, image,oferta}) {
     return (
 
         <section className={styles.BodyProducts}>
@@ -22,17 +9,14 @@ export default function ProductsTable() {
             <br></br>
             <br></br>
             <div className={styles.TableMain}>
-                {products.map((product, index) => (
-                    <div key={index} className={styles.ItemProduct}>
-                        <div>
-                            <img src={product.image}></img>
-                            <div className={styles.BlockNamePrice}>
-                                <h5>{product.name}</h5>
-                                <h4>R$ {product.price}</h4>
-                            </div>
-                        </div>
+                <div>
+                    <img src={image}></img>
+                    <div className={styles.BlockNamePrice}>
+                        <h5>{name}</h5>
+                        <h4>R$ {price}</h4>
                     </div>
-                ))}
+                    {oferta && <p>Oferta Imperdível</p>}
+                </div>
             </div>
         </section>
     )
