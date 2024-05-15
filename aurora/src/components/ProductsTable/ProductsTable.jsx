@@ -1,6 +1,17 @@
 import styles from './ProductsTable.module.css'
+import PropTypes from "prop-types"
 
-export default function ProductsTable({ name, price, image,oferta}) {
+
+export default function ProductsTable({ products }) {
+
+ProductsTable.propTypes = {
+    products: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            price: PropTypes.number.isRequired,
+            oferta: PropTypes.string
+        })
+    ).isRequired}
     return (
 
         <section className={styles.BodyProducts}>
@@ -9,14 +20,19 @@ export default function ProductsTable({ name, price, image,oferta}) {
             <br></br>
             <br></br>
             <div className={styles.TableMain}>
-                <div>
-                    <img src={image}></img>
-                    <div className={styles.BlockNamePrice}>
-                        <h5>{name}</h5>
-                        <h4>R$ {price}</h4>
-                    </div>
-                    {oferta && <p>Oferta Imperdível</p>}
-                </div>
+                {products.map((product, index) => {
+                    return (
+                        <div key={index} className={styles.ItemProduct}>
+                            <img src={product.image}></img>
+                            <div className={styles.BlockNamePrice}>
+                                <h5>{product.name}</h5>
+                                <h4>R$ {product.price}</h4>
+                            </div>
+                            {product.oferta && <p>Oferta Imperdível</p>}
+                        </div>
+                    );
+                })}
+
             </div>
         </section>
     )

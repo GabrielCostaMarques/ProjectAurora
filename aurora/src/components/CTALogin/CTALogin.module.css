@@ -1,6 +1,6 @@
 .ImgParallax{
     background: url("../../assets/capa-cta-login.jpg");
-    background-position-y: center;
+    background-position-y: top;
     background-attachment: fixed;
     object-fit: cover;
     background-repeat: no-repeat;
