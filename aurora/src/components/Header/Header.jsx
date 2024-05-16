@@ -7,12 +7,23 @@ import { useState } from 'react';
 export default function Header() {
 
     const [statusLogin]=useState(true)
-    
+
+    const [scrolled, setScrolled]=useState(false)
+
+    const handleScroll=()=>{
+        if(window.scrollY<=90){
+            setScrolled(true)
+        }else{
+            setScrolled(false)
+        }
+    }
+
+    window.addEventListener("scroll",handleScroll)
 
     return (
         <header>
             {statusLogin==false?(
-                            <div className={styles.headerContent}>
+                            <div className={scrolled? styles.headerContent:styles.headerContentScroll}>
                             <div className={styles.boxLogo}>
                                 <img className={styles.logo} src={Logo} alt="Logo Aurora"/>
                             </div>
@@ -27,7 +38,7 @@ export default function Header() {
                             
                         </div>
             ):(
-                <div className={styles.headerContent}>
+                <div className={scrolled? styles.headerContent:styles.headerContentScroll}>
                 <div className={styles.boxLogo}>
                     <img className={styles.logo} src={Logo} alt="Logo Aurora"/>
                 </div>

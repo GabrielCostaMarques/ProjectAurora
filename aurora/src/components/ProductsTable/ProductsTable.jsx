@@ -1,17 +1,7 @@
 import styles from './ProductsTable.module.css'
-import PropTypes from "prop-types"
 
 
 export default function ProductsTable({ products }) {
-
-ProductsTable.propTypes = {
-    products: PropTypes.arrayOf(
-        PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            price: PropTypes.number.isRequired,
-            oferta: PropTypes.string
-        })
-    ).isRequired}
     return (
 
         <section className={styles.BodyProducts}>

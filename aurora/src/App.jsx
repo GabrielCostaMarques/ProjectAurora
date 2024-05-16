@@ -10,26 +10,12 @@ import bag from "./assets/imges-export"
 
 function App() {
 
-  const data = [{
-    name: "Bolsa",
-    price: 30,
-    image: `${bag.image4}`,
-    oferta: "teste"
-  },
-
-  {
-    name: "Bolsa",
-    price: 30,
-    image: `${bag.image4}`,
-    oferta: "teste"
-  },
-
-  {
-    name: "Bolsa",
-    price: 30,
-    image: `${bag.image4}`,
-    oferta: "teste"
-  }]
+  const data = [
+    {name: "Bolsa",price: 30,image: `${bag.image4}`,oferta: "teste"},
+    {name: "Bolsa",price: 30,image: `${bag.image4}`,oferta: "teste"},
+    {name: "Bolsa",price: 30,image: `${bag.image4}`,oferta: "teste"},
+    {name: "Bolsa",price: 30,image: `${bag.image4}`,oferta: "teste"}
+]
 
   return (
     <>
