@@ -11,17 +11,32 @@ section {
   position: fixed;
   z-index: 10;
   align-items: center;
-  background-image: linear-gradient(to top, #fff 0%, #fff 100%);
+  background-image: linear-gradient(to top, var(---global-element-color) 0%, var(---global-element-color) 100%);
   background-size: 100% 0%;
   background-repeat: no-repeat;
   transition: background-size 0.3s, box-shadow 0.01s; /* Adiciona a propriedade box-shadow à transição */
 }
 
 .scrollDown {
-  background-image: linear-gradient(to bottom, #fff 100%, #fff 0%);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(to bottom, var(---global-element-color) 100%, var(---global-element-color) 0%);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   background-size: 100% 100%;
   transition: background-size 0.3s, box-shadow 1.2s; /* Adiciona a propriedade box-shadow à transição */
+  
+  & a{
+    color: #fff
+  }
+
+  & .boxLogo{
+    background-image: url("../../assets/Ativo-3.png") !important;
+    
+  }
+
+  & .buyCar{
+    background-image: url("../../assets/Ativo-5.png") !important;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 
@@ -66,11 +81,17 @@ section {
 .boxLogo {
   position: fixed;
   margin-left: 50px;
+  background-image: url("../../assets/logo-rgb.png");
+  background-size: contain;
+  width: 200px;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  height: 40px;
 
-  & .logo {
+  /* & .logo {
     width: 200px;
     object-fit: contain;
-  }
+  } */
 }
 
 
@@ -81,9 +102,12 @@ section {
   position: fixed;
   margin-left: 95%;
   cursor: pointer;
+  background-image: url("../../assets/icon-buyCar.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.dropDownMenu {
+/* .dropDownMenu {
   visibility: visible;
   background-color: var(---global-element-color);
   position: fixed;
@@ -102,4 +126,4 @@ section {
     width: 90%;
   }
 
-}
+} */
