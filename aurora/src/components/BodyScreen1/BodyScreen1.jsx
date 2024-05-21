@@ -4,14 +4,8 @@ import {Autoplay, EffectFade} from "swiper/modules"
 import "swiper/css/effect-fade"
 
 
-export default function BodyScreen1() {
-// Fake api para os slides
-    const dataImages = [
-        { id: 1, image: `${slideImages.image1}`},
-        { id: 2, image: `${slideImages.image2}`},
-        { id: 3, image: `${slideImages.image3}`},
-        
-    ]
+export default function BodyScreen1({slides}) {
+
 
 
     return (
