@@ -6,7 +6,7 @@
   ---global-font-color:#000;
   ---global-element-color:#3C7D45;
   ---global-element-secundary-color:#B6E8B7;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /*ancora desce suave*/
 }
 
 body{
@@ -28,7 +28,7 @@ h1{
   font-size: 3.9em;
 }
 
-button {
+button{
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;

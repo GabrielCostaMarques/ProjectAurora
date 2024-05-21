@@ -1,7 +1,9 @@
 import styles from './ProductsTable.module.css'
 
 
+
 export default function ProductsTable({ products }) {
+
     return (
 
         <section className={styles.BodyProducts}>
