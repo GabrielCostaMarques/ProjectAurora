@@ -16,9 +16,9 @@ function App() {
 ]
 
   const data = [
+    {name: "Bolsa",price: 300,image: `${images.bag}`,oferta: "teste"},
     {name: "Bolsa",price: 30,image: `${images.bag}`,oferta: "teste"},
-    {name: "Bolsa",price: 30,image: `${images.bag}`,oferta: "teste"},
-    {name: "Bolsa",price: 30,image: `${images.bag}`,oferta: "teste"},
+    {name: "tenis",price: 400,image: `${images.bag}`,oferta: "teste"},
     {name: "Bolsa",price: 30,image: `${images.bag}`,oferta: "teste"},
 ]
 
