@@ -11,6 +11,7 @@
 
 body{
   margin: 0 !important;
+  scroll-behavior: smooth;
 }
 
 section{
@@ -44,4 +45,8 @@ button:hover{
   border-color: var(---global-element-secundary-color);
   color: var(---global-element-color);
   transition: 0.2s;
+}
+
+.swiper-pagination-bullet{
+  background-color: var(---global-element-color) !important;
 }

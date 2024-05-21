@@ -1,6 +1,5 @@
 .BodyProducts {
   display: block;
-
   width: 100%;
 
   & h2 {
@@ -19,11 +18,12 @@
     height: 300px;
     width: 20%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: 0.2s;
     scale: 1.0;
-    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.06);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.06);
     padding: 10px;
 
 
@@ -37,7 +37,7 @@
   }
 
   &:hover{
-    scale: 0.95;
+    scale: 0.98;
     cursor: pointer;
     transition: 0.2s;
     box-shadow: none;

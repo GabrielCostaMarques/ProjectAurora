@@ -1,41 +1,58 @@
 import styles from './Header.module.css';
 import Logo from '../../assets/logo-rgb.png';
+import { useState } from 'react';
 
 
 
 export default function Header() {
- 
-    console.log(document.getElementById("#overview"));
-   
+
+    const [statusLogin] = useState(true)
+    const [scrolled, setScrolled] = useState(false)
+
+
+
+    const handleScroll = () => {
+        if (window.scrollY > 130) {
+            setScrolled(true)
+
+
+        } else {
+            setScrolled(false)
+        }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
     return (
         <header>
-
-            <div className={styles.headerContent}>
-                <div className={styles.boxLogo}>
-                    <img className={styles.logo} src={Logo} alt="Logo Aurora" />
-                </div>
-                <nav>
-                    <a id="#overview">OVERVIEW</a>
-                    <a href="#projetos">PROMOÇÕES</a>
-                    <a href="#projetos">LUXO</a>
-                    <a href="#projetos">CUSTO BENEFÍCIO</a>
-                </nav>
-            </div>
-            <div className={styles.megaMenu}>
-                <div>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, reprehenderit.
-                </div>
-                <div>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, reprehenderit.
-                </div>
-                <div>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, reprehenderit.
-                </div>
-            </div>
+            {statusLogin == false ? (
+                <div className={scrolled ? styles.headerContent : styles.headerContentScroll}>
+                    <div className={styles.boxLogo}>
+                        <img className={styles.logo} src={Logo} alt="Logo Aurora" />
+                    </div>
+                    <nav>
+                        <a href="#overview">OVERVIEW</a>
+                        <a href="#projetos">PROMOÇÕES</a>
+                        <a href="#projetos">LUXO</a>
+                        <a href="#projetos">CUSTO BENEFÍCIO</a>
+                    </nav>
+                    <div> <a href="#">LOGIN</a></div>
 
 
+                </div>
+            ) : (
+                <div className={`${styles.headerContent} ${scrolled ? styles.scrollDown : ""}`}>
+                    <div className={styles.boxLogo}></div>
+                    <nav>
+                        <a href="#overview">OVERVIEW</a>
+                        <a href="#projetos">PROMOÇÕES</a>
+                        <a href="#projetos">LUXO</a>
+                        <a href="#projetos">CUSTO BENEFÍCIO</a>
+                    </nav>
+                    <div className={styles.buyCar}></div>
+                </div>
+            )}
         </header>
-
 
     )
 }

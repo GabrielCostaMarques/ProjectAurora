@@ -1,128 +1,111 @@
-section{
+section {
   margin: 0;
 }
 
-.headerContent{
-    margin-top: -9px;
-    padding-top: 50px;
+.headerContent {
+  padding-top: 5px;
+  width: 100%;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0);
+  height: 76px;
+  position: fixed;
+  z-index: 10;
+  align-items: center;
+  background-image: linear-gradient(to top, var(---global-element-color) 0%, var(---global-element-color) 100%);
+  background-size: 100% 0%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s, box-shadow 0.01s; /* Adiciona a propriedade box-shadow à transição */
+}
+
+.scrollDown {
+  background-image: linear-gradient(to bottom, var(---global-element-color) 100%, var(---global-element-color) 0%);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  background-size: 100% 100%;
+  transition: background-size 0.3s, box-shadow 1.2s; /* Adiciona a propriedade box-shadow à transição */
+  
+  & a{
+    color: #fff
+  }
+
+  & .boxLogo{
+    background-image: url("../../assets/Ativo-3.png") !important;
+    
+  }
+
+  & .buyCar{
+    background-image: url("../../assets/Ativo-5.png") !important;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+& nav {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+
+  & a {
+    margin-right: 50px;
+    color: var(---global-font-color);
+    font-weight: 500;
+    letter-spacing: 2px;
+    position: relative;
+    text-decoration: none;
+  }
+
+  & a:hover {
+    color: var(---global-element-color);
+  }
+
+
+  & a::after {
+    content: "";
+    position: absolute;
+    display: block;
     width: 100%;
-    display: flex;
-    background-color: rgba(0, 0, 0, 0);
-    height: 10px;
-    position: fixed;
-    z-index: 10;
+    height: 2px;
+    left: 0;
+    background-color: var(---global-element-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
   }
 
-  .boxLogo{
-    position: fixed;
-    margin-left: 50px;
+  & a:hover::after {
+    transform: scaleX(1);
   }
+}
 
-  .logo{
+
+.boxLogo {
+  position: fixed;
+  margin-left: 50px;
+  background-image: url("../../assets/logo-rgb.png");
+  background-size: contain;
+  width: 200px;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  height: 40px;
+
+  /* & .logo {
     width: 200px;
     object-fit: contain;
-  }
-
-  .headerContent nav{
-        width: 100%;
-        text-align: center;
-        display: inline-block;
-        
-        cursor: pointer;
-  }
-  
-  .headerContent nav a{
-      margin-right: 50px;
-      color: var(---global-font-color);
-      font-weight: 500;
-      letter-spacing: 2px;
-      position: relative;
-      text-decoration: none;
-  }
-
-  .megaMenu{
-    background-color: var(---global-body-color);
-    width: 100%;
-    height: 40vh;
-    display: none;
-  }
-
-  #overview:not(:hover) .megaMenu{
-
-  }
-  
-    
-    a:hover {
-      color: var(---global-element-color);
-    }
-    
-    a::after {
-      content: "";
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 2px;
-      left: 0;
-      background-color: var(---global-element-color);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    
-    a:hover::after {
-      transform: scaleX(1);
-    }
-
-    
-
-/* config btn hamburguinho */
-header .nav-btn {
-	padding: 5px;
-	cursor: pointer;
-	background: transparent;
-	border: none;
-	outline: none;
-	color: var(--textColor);
-	visibility: hidden;
-	opacity: 0;
-	font-size: 1.8rem;
+  } */
 }
 
 
-@media only screen and (max-width: 1024px) {
-
-	header .nav-btn {
-		visibility: visible;
-		opacity: 1;
-	}
-
-
-	header nav {
-		position: fixed;
-		top: -100vh;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1.5rem;
-		background-color: var(--mainColor);
-		transition: 1s;
-	}
-
-	header .responsive_nav {
-		transform: translateY(100vh);
-	}
-
-	nav .nav-close-btn {
-		position: absolute;
-		top: 2rem;
-		right: 2rem;
-	}
-
-	nav a {
-		font-size: 1.5rem;
-	}
-
+.buyCar {
+  width: 40px;
+  height: 40px;
+  margin-right: 50px;
+  position: fixed;
+  margin-left: 95%;
+  cursor: pointer;
+  background-image: url("../../assets/icon-buyCar.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
+
+
+
