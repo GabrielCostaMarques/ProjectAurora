@@ -1,0 +1,17 @@
+.bodyContainer{
+    justify-content: center;
+    display: flex;
+    background-color: transparent !important;
+}
+
+label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & input{
+        background-color: var(---global-body-color);
+    }
+}
+
+

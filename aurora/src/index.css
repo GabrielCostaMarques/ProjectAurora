@@ -6,6 +6,7 @@
   ---global-font-color:#000;
   ---global-element-color:#3C7D45;
   ---global-element-secundary-color:#B6E8B7;
+  --global-element-input-color:rgba(0,0,0,0.5)
   scroll-behavior: smooth; /*ancora desce suave*/
 }
 
@@ -34,7 +35,7 @@ button{
   font-size: 1em;
   font-family: inherit;
   background-color: var(---global-element-color);
-  color: var(---global-font-color);
+  color: var(---global-body-color);
   cursor: pointer;
   transition: border-color 0.25s;
   transition: 0.2s;
@@ -47,6 +48,15 @@ button:hover{
   transition: 0.2s;
 }
 
+input{
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin-right: 20px;
+  padding: 10px;
+  border: none;
+  background-color: var(--global-element-input-color);
+}
+
 .swiper-pagination-bullet{
   background-color: var(---global-element-color) !important;
 }
+

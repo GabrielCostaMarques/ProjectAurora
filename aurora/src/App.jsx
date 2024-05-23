@@ -7,6 +7,8 @@ import ProductsTable from './components/ProductsTable/ProductsTable'
 
 import images from '../src/assets/img-export'
 
+
+
 function App() {
   const dataImagesSlider = [
     { id: 0, image: `${images.image1}`},

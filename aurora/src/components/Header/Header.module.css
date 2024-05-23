@@ -14,28 +14,38 @@ section {
   background-image: linear-gradient(to top, var(---global-element-color) 0%, var(---global-element-color) 100%);
   background-size: 100% 0%;
   background-repeat: no-repeat;
-  transition: background-size 0.3s, box-shadow 0.01s; /* Adiciona a propriedade box-shadow à transição */
+  transition: background-size 0.3s, box-shadow 0.01s;
+  /* Adiciona a propriedade box-shadow à transição */
 }
 
 .scrollDown {
   background-image: linear-gradient(to bottom, var(---global-element-color) 100%, var(---global-element-color) 0%);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   background-size: 100% 100%;
-  transition: background-size 0.3s, box-shadow 1.2s; /* Adiciona a propriedade box-shadow à transição */
-  
-  & a{
+  transition: background-size 0.3s, box-shadow 1.2s;
+  /* Adiciona a propriedade box-shadow à transição */
+
+  & a {
     color: #fff
   }
 
-  & .boxLogo{
-    background-image: url("../../assets/Ativo-3.png") !important;
-    
+  & .boxLogo {
+    background-image: url("../../assets/logo-negativo.png") !important;
+
   }
 
-  & .buyCar{
-    background-image: url("../../assets/Ativo-5.png") !important;
-    width: 40px;
-    height: 40px;
+  & .buyCar {
+
+    width: 30px;
+    height: 30px;
+    margin-right: 50px;
+    position: fixed;
+    margin-left: 95.35%;
+    cursor: pointer;
+    background-image: url("/src/assets/icon-buy-car-negativo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
   }
 }
 
@@ -105,7 +115,4 @@ section {
   background-image: url("../../assets/icon-buyCar.png");
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-
-
+} 
