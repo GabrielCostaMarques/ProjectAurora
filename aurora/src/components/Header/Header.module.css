@@ -20,13 +20,23 @@ section {
 
 .scrollDown {
   background-image: linear-gradient(to bottom, var(---global-element-color) 100%, var(---global-element-color) 0%);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.09); */
   background-size: 100% 100%;
   transition: background-size 0.3s, box-shadow 1.2s;
   /* Adiciona a propriedade box-shadow à transição */
 
   & a {
     color: #fff
+  }
+  & a:hover {
+    color: var(---global-body-color);
+  }
+
+
+  & a::after {
+
+    background-color: var(---global-body-color);
+
   }
 
   & .boxLogo {
