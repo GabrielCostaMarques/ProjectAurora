@@ -1,8 +1,19 @@
 import styles from './ProductsTable.module.css'
+import { useQuery } from 'react-query';
+import axios from 'axios'
 
 
 
-export default function ProductsTable({ products }) {
+export default function ProductsTable() {
+
+    const {data,isLoading}=useQuery("products",()=>{
+        return axios.get("http://localhost:3000/products")
+        .then(response=>response.data)
+    })
+
+    if (isLoading) {
+        return <p>Carregando...</p>
+    }
 
     return (
 
@@ -12,7 +23,7 @@ export default function ProductsTable({ products }) {
             <br></br>
             <br></br>
             <div className={styles.TableMain}>
-                {products.map((product, index) => {
+                {data.map((product, index) => {
                     return (
                         <div key={index} className={styles.ItemProduct}>
                             <img src={product.image}></img>

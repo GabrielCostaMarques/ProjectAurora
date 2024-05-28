@@ -34,10 +34,10 @@ export default function NewLestter() {
 
             <form onSubmit={handleSubmit} className={styles.bodyContainer}>
                 <label htmlFor="name">
-                    <input type="text" name="name" placeholder="Nome..." onChange={(e) => {setName(e.target.value)}} value={name} />
+                    <input type="text" name="name" placeholder="Nome..." onChange={(e) => {setName(e.target.value)}} value={name} required />
                 </label>
                 <label htmlFor="email">
-                    <input type="email" name="name" placeholder="Email..." onChange={(e) => {setEmail(e.target.value)}} value={email} />
+                    <input type="email" name="name" placeholder="Email..." onChange={(e) => {setEmail(e.target.value)}} value={email} required/>
                 </label>
                 <label >
                     {loading && <p>Carregando Dados...</p>}
