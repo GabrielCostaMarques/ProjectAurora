@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Maria rita",
+      "email": "santoscardosomariarita@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "Gabriel Marques",
+      "email": "gabrielcostamarques2@gmail.com"
+    },
+    {
+      "id": "8a13",
+      "name": "Gabriel Costa Marques",
+      "email": "teste@gmail.com"
+    }
+  ]
+}

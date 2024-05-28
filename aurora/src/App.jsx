@@ -9,6 +9,7 @@ import images from '../src/assets/img-export'
 
 
 
+
 function App() {
   const dataImagesSlider = [
     { id: 0, image: `${images.image1}`},
@@ -28,7 +29,7 @@ function App() {
     <>
       <Header />
       <BodyScreen1 slides={dataImagesSlider}/>
-      <CTALogin />
+      <CTALogin api={URL}/>
       <ProductsTable products={data}/>
 
     </>
