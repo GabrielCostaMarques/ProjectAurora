@@ -1,19 +1,14 @@
 import styles from './ProductsTable.module.css'
-import { useQuery } from 'react-query';
-import axios from 'axios'
+import { useFetchItems } from '../../hooks/useFetchQuery';
 
-
+const URL="http://localhost:3000/products"
 
 export default function ProductsTable() {
 
-    const {data,isLoading}=useQuery("products",()=>{
-        return axios.get("http://localhost:3000/products")
-        .then(response=>response.data)
-    })
+const {data, isLoading}=useFetchItems(URL)
 
-    if (isLoading) {
-        return <p>Carregando...</p>
-    }
+if(isLoading)return<p>Carregando...</p>
+
 
     return (
 

@@ -21,8 +21,13 @@
       "email": ""
     }
   ],
-
   "products":[
+    {
+    "name": "Bolsa",
+    "price": 300,
+    "image": "../src/assets/bolsaforTable.png",
+    "oferta": "teste"
+  },
     {
     "name": "Bolsa",
     "price": 300,
@@ -30,4 +35,6 @@
     "oferta": "teste"
   }
   ]
+
+
 }
