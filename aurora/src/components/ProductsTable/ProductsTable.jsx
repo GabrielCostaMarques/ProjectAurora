@@ -7,7 +7,6 @@ export default function ProductsTable() {
     const { getRequest } = useFetchItems('products',URL);
 
     const {isLoading, isError, data}=getRequest
-    
         
     return (
         <section className={styles.BodyProducts}>
@@ -32,8 +31,8 @@ export default function ProductsTable() {
                         </div>
                     ))
                 ) : (
-                    data.map((product, index) => (
-                        <div key={index} className={styles.ItemProduct}>
+                    data.map((product) => (
+                        <div key={product.id} className={styles.ItemProduct}>
                             <img src={product.image} alt={product.name}></img>
                             <div className={styles.BlockNamePrice}>
                                 <h5>{product.name}</h5>

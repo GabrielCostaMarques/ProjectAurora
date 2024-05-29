@@ -47,5 +47,20 @@
       "oferta": "teste",
       "id": "c9bf"
     }
+  ],
+
+  "imgSlider":[
+    { 
+      "id": 0, 
+      "image":"./src/assets/capa-slider-main.jpg" 
+    },
+    { 
+      "id": 1, 
+      "image":"./src/assets/bag-red.jpg" 
+    },
+    { 
+      "id": 2, 
+      "image": "./src/assets/modelWithBag.jpg"
+    }
   ]
 }
