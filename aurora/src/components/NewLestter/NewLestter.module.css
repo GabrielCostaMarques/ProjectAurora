@@ -12,6 +12,10 @@ label{
     & input{
         background-color: var(---global-body-color);
     }
+
+    & button{
+        width: 137px;
+    }
 }
 
 

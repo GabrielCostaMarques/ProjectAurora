@@ -1,17 +1,21 @@
 import axios from 'axios'
-import {useQuery} from 'react-query'
+import {useQuery,useMutation} from 'react-query'
 
 
-export function useFetchItems(url) {
+export function useFetchItems(key,url) {
 
 
-    return useQuery(['products'], async () => {
-        const response = await axios.get(url);
-
-        if (response.status !== 200) {
-            throw new Error("Falha ao carregar os produtos");
-        }
-
+    const getRequest= useQuery([key,'get'], async () => {
+        const response= await axios.get(url);
         return response.data
+        
     });
-}
+    
+
+    const postRequest = useMutation([key,'post'],async(newData)=>{
+        const response = await axios.post(url,newData)
+        return response.data
+    })
+    return {getRequest,postRequest}
+
+ }

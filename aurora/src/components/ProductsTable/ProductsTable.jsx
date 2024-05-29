@@ -4,11 +4,11 @@ import { useFetchItems } from '../../hooks/useFetchQuery';
 const URL = "http://localhost:3000/products";
 
 export default function ProductsTable() {
-    const { data, isLoading, isError } = useFetchItems(URL);
-    
-    
-    
+    const { getRequest } = useFetchItems('products',URL);
 
+    const {isLoading, isError, data}=getRequest
+    
+        
     return (
         <section className={styles.BodyProducts}>
             <h2>CONHEÇA MAIS DE NOSSOS PRODUTOS</h2>

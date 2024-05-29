@@ -19,23 +19,33 @@
       "id": "c8ba",
       "name": "Gabriel Costa Marques",
       "email": ""
+    },
+    {
+      "id": "2f18",
+      "name": "GABRIEL COSTA MARQUES",
+      "email": "teste@gmail.com"
+    },
+    {
+      "id": "f46c",
+      "name": "GABRIEL COSTA MARQUES",
+      "email": "teste@gmail.com"
+    }
+
+  ],
+  "products": [
+    {
+      "name": "Bolsa",
+      "price": 300,
+      "image": "../src/assets/bolsaforTable.png",
+      "oferta": "teste",
+      "id": "d5dc"
+    },
+    {
+      "name": "Bolsa",
+      "price": 300,
+      "image": "../src/assets/bolsaforTable.png",
+      "oferta": "teste",
+      "id": "c9bf"
     }
   ]
-  ,
-  "products":[
-    {
-    "name": "Bolsa",
-    "price": 300,
-    "image": "../src/assets/bolsaforTable.png",
-    "oferta": "teste"
-  },
-    {
-    "name": "Bolsa",
-    "price": 300,
-    "image": "../src/assets/bolsaforTable.png",
-    "oferta": "teste"
-  }
-  ]
-
-
 }
