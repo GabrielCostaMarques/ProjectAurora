@@ -14,37 +14,74 @@
 }
 
 .ItemProduct {
-    border: 1px solid rgba(0, 0, 0, 0.02);
-    height: 300px;
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.2s;
-    scale: 1.0;
-    box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, 0.06);
-    padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  height: 300px;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  scale: 1.0;
+  box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, 0.06);
+  padding: 10px;
+}
 
+.ItemProduct img {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+}
 
-  & img{
+.ItemProduct h4 {
+  color: var(---global-element-color);
+}
+
+.ItemProduct:hover {
+  scale: 0.99;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.BlockNamePrice {
+  text-align: center;
+}
+
+/* Skeleton styles */
+.Skeleton {
+  border-radius: 4px;
+
+  &.SkeletonImage {
     height: 200px;
     width: 100%;
-    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 40px;
   }
-  & h4{
-    color: var(---global-element-color);
+  
+  &.SkeletonText {
+    content: '';
+    height: 20px;
+    width: 80%;
+    margin-bottom: 10px;
   }
-
-  &:hover{
-    scale: 0.99;
-    cursor: pointer;
-    transition: 0.2s;
-    box-shadow: none;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+  
+  &.skeleton-text.short {
+    width: 60%;
   }
-
-  & .BlockNamePrice{
-    text-align: center;
+  
+  @keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
   }
+  
 }
+
