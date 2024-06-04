@@ -2,6 +2,7 @@
 import { useSearchParams,Link } from "react-router-dom"
 import { useFetchItems } from "../hooks/useFetchQuery"
 import styles from '../components/ProductsTable/ProductsTable.module.css';
+import { useEffect } from "react";
 
 
 
@@ -17,6 +18,11 @@ const ProductsSearched = () => {
     const {isError,isLoading,data:items}=getRequest
     console.log(items);
 
+    //para atualizar sempre que outra busca por feita
+    useEffect(()=>{
+        getRequest.refetch()
+    },[searchParams,getRequest])
+
   return (
     <section className={styles.BodyProducts}>
             <h2>CONHEÇA MAIS DE NOSSOS PRODUTOS</h2>
@@ -24,7 +30,7 @@ const ProductsSearched = () => {
             <br />
             <br />
             <div className={styles.TableMain}>
-                {isError?(
+                {isError || !items?(
                     <h2>Algo de errado aconteceu</h2>
                 ):
                 
