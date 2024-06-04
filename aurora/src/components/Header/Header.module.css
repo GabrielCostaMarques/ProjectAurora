@@ -1,4 +1,3 @@
-
 .headerContent {
   padding-top: 5px;
   width: 100%;
@@ -12,26 +11,34 @@
   background-size: 100% 0%;
   background-repeat: no-repeat;
   transition: background-size 0.3s, box-shadow 0.01s;
-  /* Adiciona a propriedade box-shadow à transição */
+
+  & .buttonLogin {
+    color: var(---global-font-color);
+    position: fixed;
+    top: 33px;
+    right: 30px;
+    color: var(---global-font-color);
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-decoration: none;
+  }
 }
 
 .scrollDown {
   background-image: linear-gradient(to bottom, var(---global-element-color) 100%, var(---global-element-color) 0%);
-  /* box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.09); */
   background-size: 100% 100%;
   transition: background-size 0.3s, box-shadow 1.2s;
-  /* Adiciona a propriedade box-shadow à transição */
 
   & a {
     color: #fff
   }
+
   & a:hover {
     color: var(---global-body-color);
   }
 
 
   & a::after {
-
     background-color: var(---global-body-color);
 
   }
@@ -54,6 +61,10 @@
     background-size: contain;
     background-repeat: no-repeat;
 
+  }
+
+  & .iconSearch{
+    background-image: url("../../assets/icon-search-negativo.png");
   }
 }
 
@@ -93,6 +104,8 @@
   & a:hover::after {
     transform: scaleX(1);
   }
+
+
 }
 
 
@@ -106,26 +119,38 @@
   object-fit: contain;
   background-repeat: no-repeat;
   height: 40px;
-
-  /* & .logo {
-    width: 200px;
-    object-fit: contain;
-  } */
 }
 
 
 .buyCar {
-  
-    width: 53px;
-    height: 53px;
-    position: fixed;
-    top: 20px;
-    margin-left: -4.39%;
-    cursor: pointer;
-    background-image: url("/src/assets/icon-buyCar.png");
-    background-size: contain;
-    background-repeat: no-repeat;
 
+  width: 53px;
+  height: 53px;
+  position: fixed;
+  top: 20px;
+  margin-left: -4.39%;
+  cursor: pointer;
+  background-image: url("/src/assets/icon-buyCar.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
+.formsContainer{
+  display: flex;
+  position: fixed;
+  right: 11%;
+}
 
-} 
+.iconSearch{
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background: url("../../assets/icon-search-positivo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.inputSearch{
+ height: 8px;
+ width: 150px;
+}
