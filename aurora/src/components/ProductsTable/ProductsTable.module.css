@@ -24,26 +24,35 @@
   transition: 0.2s;
   scale: 1.0;
   box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, 0.06);
-  padding: 10px;
+  padding-bottom: 20px;
+
+  & img{
+    height: 10em;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  & h4{
+    color: var(---global-element-color);
+  }
+
+  &:hover{
+    scale: 0.99;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  & span{
+    background-color: #000;
+    width: 100%;
+    text-align: center;
+    color: var(---global-body-color);
+    text-transform: uppercase;
+  }
 }
 
-.ItemProduct img {
-  height: 200px;
-  width: 100%;
-  object-fit: contain;
-}
-
-.ItemProduct h4 {
-  color: var(---global-element-color);
-}
-
-.ItemProduct:hover {
-  scale: 0.99;
-  cursor: pointer;
-  transition: 0.2s;
-  box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
 
 .BlockNamePrice {
   text-align: center;

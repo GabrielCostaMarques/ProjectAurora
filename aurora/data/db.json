@@ -29,37 +29,59 @@
       "id": "f46c",
       "name": "GABRIEL COSTA MARQUES",
       "email": "teste@gmail.com"
+    },
+    {
+      "id": "bb9c",
+      "name": "Gabriel Costa Marques",
+      "email": "RosanaSantos@Costa.com"
+    },
+    {
+      "id": "ff5a",
+      "name": "Gabriel Costa Marques",
+      "email": "Destaques@gmail.com"
     }
-
   ],
   "products": [
     {
-      "name": "Bolsa",
-      "price": 300,
+      "name": "Padrão",
+      "price": 1300.99,
       "image": "../src/assets/bolsaforTable.png",
       "oferta": "teste",
       "id": "d5dc"
     },
     {
-      "name": "Bolsa",
-      "price": 300,
+      "name": "Violetinha",
+      "price": 400,
       "image": "../src/assets/bolsaforTable.png",
       "oferta": "teste",
       "id": "c9bf"
+    },
+    {
+      "name": "Mini Bolsinha",
+      "price": 569,
+      "image": "../src/assets/bolsaforTable.png",
+      "oferta": "teste",
+      "id": "c5634"
+    },
+    {
+      "name": "Pretiha",
+      "price": 300,
+      "image": "../src/assets/bolsaforTable.png",
+      "oferta": "teste",
+      "id": "c3t46"
     }
   ],
-
-  "imgSlider":[
-    { 
-      "id": 0, 
-      "image":"./src/assets/capa-slider-main.jpg" 
+  "imgSlider": [
+    {
+      "id": "0",
+      "image": "./src/assets/capa-slider-main.jpg"
     },
-    { 
-      "id": 1, 
-      "image":"./src/assets/bag-red.jpg" 
+    {
+      "id": "1",
+      "image": "./src/assets/bag-red.jpg"
     },
-    { 
-      "id": 2, 
+    {
+      "id": "2",
       "image": "./src/assets/modelWithBag.jpg"
     }
   ]

@@ -16,8 +16,9 @@ body{
 }
 
 section{
-  margin: 100px 0;
-  background-color: var(---global-body-color)
+  padding: 0;
+  padding-top: 100px;
+  margin: 0;
 }
 
 h1,h2,h3,h4,h5,p,a {
@@ -59,4 +60,5 @@ input{
 .swiper-pagination-bullet{
   background-color: var(---global-element-color) !important;
 }
+
 

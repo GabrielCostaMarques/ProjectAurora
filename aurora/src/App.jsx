@@ -1,19 +1,30 @@
 
 import './App.css'
-import BodyScreen1 from './components/BodyScreen1/BodyScreen1'
-import CTALogin from './components/CTALogin/CTALogin'
-import Header from './components/Header/Header'
-import ProductsTable from './components/ProductsTable/ProductsTable'
 
+import Header from './components/Header/Header'
+
+
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './page/Home'
+import BuyCar from './page/BuyCar'
+import ProductSingle from './page/ProductSingle'
 
 function App() {
 
   return (
     <>
-      <Header />
-      <BodyScreen1/>
-      <CTALogin/>
-      <ProductsTable/>
+
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/carrinho" element={<BuyCar />} />
+          <Route path="/products/:id" element={<ProductSingle/>} />
+        </Routes>
+      </BrowserRouter>
+
+
 
     </>
   )

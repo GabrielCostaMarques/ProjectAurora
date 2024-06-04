@@ -1,6 +1,8 @@
 import styles from './Header.module.css';
 import Logo from '../../assets/logo-rgb.png';
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -27,9 +29,10 @@ export default function Header() {
         <header>
             {statusLogin == false ? (
                 <div className={scrolled ? styles.headerContent : styles.headerContentScroll}>
-                    <div className={styles.boxLogo}>
+                    <Link to={"/"}><div className={styles.boxLogo}>
                         <img className={styles.logo} src={Logo} alt="Logo Aurora" />
-                    </div>
+                    </div></Link>
+                    
                     <nav>
                         <a href="#overview">OVERVIEW</a>
                         <a href="#projetos">PROMOÇÕES</a>
@@ -42,14 +45,23 @@ export default function Header() {
                 </div>
             ) : (
                 <div className={`${styles.headerContent} ${scrolled ? styles.scrollDown : ""}`}>
+                    <Link to={"/"}>
                     <div className={styles.boxLogo}></div>
+                    </Link>
+                    
                     <nav>
                         <a href="#overview">OVERVIEW</a>
                         <a href="#projetos">PROMOÇÕES</a>
                         <a href="#projetos">LUXO</a>
                         <a href="#projetos">CUSTO BENEFÍCIO</a>
                     </nav>
-                    <div className={styles.buyCar}></div>
+                    <Link to={`/carrinho`}>
+                        <div className={styles.buyCar}></div>
+                    </Link>
+
+
+
+
                 </div>
             )}
         </header>
