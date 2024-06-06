@@ -34,12 +34,12 @@
   }
 
   & a:hover {
-    color: var(---global-body-color);
+    color: var(---global-element-secundary-color);
   }
 
 
   & a::after {
-    background-color: var(---global-body-color);
+    background-color: var(---global-element-secundary-color);
 
   }
 

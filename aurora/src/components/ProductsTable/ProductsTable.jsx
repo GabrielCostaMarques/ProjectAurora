@@ -1,6 +1,7 @@
 import styles from './ProductsTable.module.css';
 import { useFetchItems } from '../../hooks/useFetchQuery';
-import { Link } from 'react-router-dom';
+
+import IndividualProduct from '../IndividualProduct';
 
 const URL = "http://localhost:3000/products";
 
@@ -11,42 +12,7 @@ export default function ProductsTable() {
         
     return (
         <section className={styles.BodyProducts}>
-            <h2>CONHEÇA MAIS DE NOSSOS PRODUTOS</h2>
-            <br />
-            <br />
-            <br />
-            <div className={styles.TableMain}>
-                {isError?(
-                    <h2>Algo de errado aconteceu</h2>
-                ):
-                
-                
-                isLoading ? (
-                    Array(3).fill().map((_, index) => (
-                        <div key={index} className={`${styles.ItemProduct}`}>
-                            <div className={styles.SkeletonImage}></div>
-                            <div className={styles.BlockNamePrice}>
-                                <div className={styles.SkeletonText}></div>
-                                {/* <div className={`skeleton skeleton-text short`}></div> */}
-                            </div>
-                        </div>
-                    ))
-                ) : (
-                    data.map((product) => (
-                        <div key={product.id} className={styles.ItemProduct}>
-                            <span>{product.oferta}</span>
-                            <img src={product.image} alt={product.name}></img>
-                            <div className={styles.BlockNamePrice}>
-                                <h5>{product.name}</h5>
-                                <h4>R$ {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h4>
-                            </div>
-                            {product.oferta && <Link to={`/products/${product.id}`}><button>Ver Detalhes</button></Link>}
-                        </div>
-                    ))
-                )
-                
-                }
-            </div>
+            <IndividualProduct data ={data} error={isError} loading={isLoading}/>
         </section>
     );
 }

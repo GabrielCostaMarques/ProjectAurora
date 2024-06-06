@@ -11,6 +11,7 @@ import BuyCar from './page/BuyCar'
 import ProductSingle from './page/ProductSingle'
 import LoginForm from './page/LoginForm'
 import ProductsSearched from './page/ProductsSearched'
+import NotFound from './page/NotFound'
 
 function App() {
 
@@ -25,6 +26,8 @@ function App() {
           <Route path="/carrinho" element={<BuyCar />} />
           <Route path="/search" element={<ProductsSearched />} />
           <Route path="/products/:id" element={<ProductSingle/>} />
+          <Route path="*" element={<NotFound/>} />
+
         </Routes>
       </BrowserRouter>
 
