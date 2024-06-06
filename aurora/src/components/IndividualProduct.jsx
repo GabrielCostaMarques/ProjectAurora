@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types';
 import styles from './ProductsTable/ProductsTable.module.css';
 import { Link } from 'react-router-dom';
 const IndividualProduct = ({data, error,loading}) => {
-
+console.log(data);
   return (
     <section>
       <div className={styles.TableMain}>
@@ -41,16 +40,6 @@ const IndividualProduct = ({data, error,loading}) => {
     </section>
   )
 }
-IndividualProduct.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      oferta: PropTypes.string,
-      image: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-    })),
-    error: PropTypes.bool.isRequired,
-    loading: PropTypes.bool.isRequired,
-  };
+
 
 export default IndividualProduct

@@ -16,35 +16,35 @@ const ProductSingle = () => {
             <br />
             <br />
             <div className={styles.TableMain}>
-                {isError ? (
-                    <h2>Algo de errado aconteceu</h2>
-                ) :
+                    {isError ? (
+                        <h2>Algo de errado aconteceu</h2>
+                    ) :
 
 
-                    isLoading ? (
-                        Array(1).fill().map((_, index) => (
-                            <div key={index} className={`${styles.ItemProduct}`}>
-                                <div className={styles.SkeletonImage}></div>
-                                <div className={styles.BlockNamePrice}>
-                                    <div className={styles.SkeletonText}></div>
-                                    
+                        isLoading ? (
+                            Array(1).fill().map((_, index) => (
+                                <div key={index} className={`${styles.ItemProduct}`}>
+                                    <div className={styles.SkeletonImage}></div>
+                                    <div className={styles.BlockNamePrice}>
+                                        <div className={styles.SkeletonText}></div>
+                                        
+                                    </div>
                                 </div>
-                            </div>
-                        ))
-                    ) : (
-                        items && (
-                            <div key={items.id} className={styles.ItemProduct}>
-                                <img src={items.image} alt={items.name}></img>
-                                <div className={styles.BlockNamePrice}>
-                                    <h5>{items.name}</h5>
-                                    <h4>R$ {items.price}</h4>
-                                </div>
+                            ))
+                        ) : (
+                            items && (
+                                <div key={items.id} className={styles.ItemProduct}>
+                                    <img src={items.image} alt={items.name}></img>
+                                    <div className={styles.BlockNamePrice}>
+                                        <h5>{items.name}</h5>
+                                        <h4>R$ {items.price}</h4>
+                                    </div>
 
-                            </div>
+                                </div>
+                            )
                         )
-                    )
 
-                }
+                    }
             </div>
         </section>
     );

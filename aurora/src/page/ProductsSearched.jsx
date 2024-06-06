@@ -1,8 +1,9 @@
 
-import { useSearchParams,Link } from "react-router-dom"
+import { useSearchParams } from "react-router-dom"
 import { useFetchItems } from "../hooks/useFetchQuery"
 import styles from '../components/ProductsTable/ProductsTable.module.css';
-import { useEffect } from "react";
+import {  useEffect, useRef } from "react";
+import IndividualProduct from "../components/IndividualProduct";
 
 
 
@@ -15,13 +16,17 @@ const ProductsSearched = () => {
     console.log(URL);
 
     const {getRequest}=useFetchItems('search',URL)
-    const {isError,isLoading,data:items}=getRequest
-    console.log(items);
+    const {isError,isLoading,data:items,refetch}=getRequest
 
+    const prevSearchParamsRef = useRef();
+    
     //para atualizar sempre que outra busca por feita
-    useEffect(()=>{
-        getRequest.refetch()
-    },[searchParams,getRequest])
+    useEffect(() => {
+        if (prevSearchParamsRef.current !== searchParams.toString()) {
+            prevSearchParamsRef.current = searchParams.toString();
+            refetch();
+        }
+    }, [searchParams, refetch]);
 
   return (
     <section className={styles.BodyProducts}>
@@ -29,38 +34,7 @@ const ProductsSearched = () => {
             <br />
             <br />
             <br />
-            <div className={styles.TableMain}>
-                {isError || !items?(
-                    <h2>Algo de errado aconteceu</h2>
-                ):
-                
-                
-                isLoading ? (
-                    Array(3).fill().map((_, index) => (
-                        <div key={index} className={`${styles.ItemProduct}`}>
-                            <div className={styles.SkeletonImage}></div>
-                            <div className={styles.BlockNamePrice}>
-                                <div className={styles.SkeletonText}></div>
-                                {/* <div className={`skeleton skeleton-text short`}></div> */}
-                            </div>
-                        </div>
-                    ))
-                ) : (
-                    items.map((product) => (
-                        <div key={product.id} className={styles.ItemProduct}>
-                            <span>{product.oferta}</span>
-                            <img src={product.image} alt={product.name}></img>
-                            <div className={styles.BlockNamePrice}>
-                                <h5>{product.name}</h5>
-                                <h4>R$ {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h4>
-                            </div>
-                            {product.oferta && <Link to={`/products/${product.id}`}><button>Ver Detalhes</button></Link>}
-                        </div>
-                    ))
-                )
-                
-                }
-            </div>
+            <IndividualProduct data={items} error={isError} loading={isLoading}/>
         </section>
   )
 }

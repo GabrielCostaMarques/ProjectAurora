@@ -17,7 +17,7 @@ export default function Header() {
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        navigate("/search?q="+search)   
+        navigate("/search?q="+search) 
         setSearch("")
     }
     
@@ -31,7 +31,6 @@ export default function Header() {
         }
     }
     window.addEventListener("scroll", handleScroll)
-    
     
 
     return (
