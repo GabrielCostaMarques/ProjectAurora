@@ -10,17 +10,14 @@ import IndividualProduct from "../components/IndividualProduct";
 
 const ProductsSearched = () => {
     const [searchParams]=useSearchParams()
-    console.log(searchParams);
     
     const URL = `http://localhost:3000/products?${searchParams}`
-    console.log(URL);
 
     const {getRequest}=useFetchItems('search',URL)
     const {isError,isLoading,data:items,refetch}=getRequest
 
     const prevSearchParamsRef = useRef();
-    
-    //para atualizar sempre que outra busca por feita
+
     useEffect(() => {
         if (prevSearchParamsRef.current !== searchParams.toString()) {
             prevSearchParamsRef.current = searchParams.toString();

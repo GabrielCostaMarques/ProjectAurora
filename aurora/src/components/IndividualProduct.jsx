@@ -1,7 +1,7 @@
 import styles from './ProductsTable/ProductsTable.module.css';
 import { Link } from 'react-router-dom';
 const IndividualProduct = ({data, error,loading}) => {
-console.log(data);
+
   return (
     <section>
       <div className={styles.TableMain}>
