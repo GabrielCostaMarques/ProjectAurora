@@ -14,7 +14,7 @@ const ProductsSearched = () => {
     const URL = `http://localhost:3000/products?${searchParams}`
 
     const {getRequest}=useFetchItems('search',URL)
-    const {isError,isLoading,data:items,refetch}=getRequest
+    const {isError,isLoading,data:items,refetch, }=getRequest
 
     const prevSearchParamsRef = useRef();
 

@@ -25,9 +25,8 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/carrinho" element={<BuyCar />} />
           <Route path="/search" element={<ProductsSearched />} />
-          <Route path="/products/:id" element={<ProductSingle/>} />
-          <Route path="*" element={<NotFound/>} />
-
+          <Route path="/products/:id" element={<ProductSingle />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
 
