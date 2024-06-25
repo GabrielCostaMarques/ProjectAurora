@@ -12,26 +12,26 @@ export default function Header() {
     const [statusLogin] = useState(true)
     const [scrolled, setScrolled] = useState(false)
 
-    const [search, setSearch]=useState("")
-    const navigate=useNavigate()
+    const [search, setSearch] = useState("")
+    const navigate = useNavigate()
 
-    const handleSubmit=(e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault()
-        navigate("/search?q="+search) 
+        navigate("/search?q=" + search)
         setSearch("")
     }
-    
+
     const handleScroll = () => {
         if (window.scrollY > 130) {
             setScrolled(true)
-            
-            
+
+
         } else {
             setScrolled(false)
         }
     }
     window.addEventListener("scroll", handleScroll)
-    
+
 
     return (
         <header>
@@ -50,7 +50,7 @@ export default function Header() {
 
                     <form className={styles.formsContainer}>
                         <label>
-                            <input className={styles.inputSearch}type="text" onChange={(e) => { setSearch(e.target.value) }} value={search} />
+                            <input className={styles.inputSearch} type="text" onChange={(e) => { setSearch(e.target.value) }} value={search} />
                         </label>
                         <label>
                             <span onClick={handleSubmit} className={styles.iconSearch}></span>
@@ -76,10 +76,10 @@ export default function Header() {
                     </nav>
                     <form onSubmit={handleSubmit} className={styles.formsContainer}>
                         <label>
-                            <input className={styles.inputSearch}type="text" onChange={(e) => { setSearch(e.target.value) }} value={search} />
+                            <input className={styles.inputSearch} type="text" onChange={(e) => { setSearch(e.target.value) }} value={search} />
                         </label>
                         <label>
-                        <span onClick={handleSubmit} className={styles.iconSearch}></span>
+                            <span onClick={handleSubmit} className={styles.iconSearch}></span>
                         </label>
                     </form>
                     <Link to={`/carrinho`}>
