@@ -1,12 +1,18 @@
 import { useParams } from "react-router-dom"
 import { useFetchItems } from "../hooks/useFetchQuery"
+
 import styles from '../components/ProductsTable/ProductsTable.module.css';
 
 const ProductSingle = () => {
+
+
+
+
+
     const { id } = useParams()
     const URL = "http://localhost:3000/products/" + id
 
-    const { getRequest } = useFetchItems('productSingle', URL);
+    const { getRequest } = useFetchItems('productSingle', URL, false);
     const { isLoading, isError, data: items } = getRequest
 
     return (

@@ -69,7 +69,8 @@ export default function Header() {
                     </Link>
 
                     <nav>
-                        <a href="#overview">OVERVIEW</a>
+                        <Link to={`/teste`}><a href="#overview">OVERVIEW</a></Link>
+                        
                         <a href="#projetos">PROMOÇÕES</a>
                         <a href="#projetos">LUXO</a>
                         <a href="#projetos">CUSTO BENEFÍCIO</a>
