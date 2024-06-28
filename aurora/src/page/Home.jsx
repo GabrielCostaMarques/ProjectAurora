@@ -4,12 +4,16 @@ import ProductsTable from "../components/ProductsTable/ProductsTable"
 
 
 const Home = () => {
+
+
+    
     return (
         <>
             <BodyScreen1 />
             <CTALogin />
             <ProductsTable />
             <section>
+
             </section>
         </>
     )

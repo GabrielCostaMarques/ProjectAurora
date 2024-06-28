@@ -3,7 +3,6 @@ import { useFetchItems } from '../../hooks/useFetchQuery';
 
 import IndividualProduct from '../IndividualProduct';
 
-// const URL = "http://localhost:3000/products";
  const URL = "http://aurora.local/wp-json/wc/v3/products";
 
 export default function ProductsTable() {

@@ -11,11 +11,14 @@
     "server": "json-server --watch data/db.json"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.48.0",
     "axios": "^1.7.2",
     "axios-oauth-1.0a": "^0.3.6",
+    "crypto-js": "^4.2.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "json-server": "^0.17.0",
+    "oauth-1.0a": "^2.2.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.1.0",
