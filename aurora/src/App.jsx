@@ -12,6 +12,7 @@ import ProductSingle from './page/ProductSingle'
 import LoginForm from './page/LoginForm'
 import ProductsSearched from './page/ProductsSearched'
 import NotFound from './page/NotFound'
+import Teste from './page/Teste'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/carrinho" element={<BuyCar />} />
+          <Route path="/teste" element={<Teste />} />
           <Route path="/search" element={<ProductsSearched />} />
           <Route path="/products/:id" element={<ProductSingle />} />
           <Route path="*" element={<NotFound />} />

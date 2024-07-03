@@ -1,10 +1,16 @@
 import { useParams } from "react-router-dom"
 import { useFetchItems } from "../hooks/useFetchQuery"
+
 import styles from '../components/ProductsTable/ProductsTable.module.css';
 
 const ProductSingle = () => {
+
+
+
+
+
     const { id } = useParams()
-    const URL = "http://localhost:3000/products/" + id
+    const URL = "http://aurora.local/wp-json/wc/v3/products" + id
 
     const { getRequest } = useFetchItems('productSingle', URL);
     const { isLoading, isError, data: items } = getRequest

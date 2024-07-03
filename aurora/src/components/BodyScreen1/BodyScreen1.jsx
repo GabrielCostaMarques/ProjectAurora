@@ -4,12 +4,12 @@ import { Autoplay, EffectFade } from "swiper/modules"
 import "swiper/css/effect-fade"
 import { useFetchItems } from '../../hooks/useFetchQuery'
 
-// const URL = "http://localhost:3000/imgSlider"
+
 const URL = "http://aurora.local/wp-json/wp/v2/media"
 
 
 export default function BodyScreen1() {
-    const { getRequest } = useFetchItems('slides', URL);
+    const { getRequest } = useFetchItems('slides', URL,false);
     const { isLoading, isError, data } = getRequest;
 
     return (
