@@ -69,7 +69,7 @@ export default function Header() {
                     </Link>
 
                     <nav>
-                        <Link to={`/teste`}><a href="#overview">OVERVIEW</a></Link>
+                       <a href="#overview">OVERVIEW</a>
                         
                         <a href="#projetos">PROMOÇÕES</a>
                         <a href="#projetos">LUXO</a>
@@ -83,7 +83,7 @@ export default function Header() {
                             <span onClick={handleSubmit} className={styles.iconSearch}></span>
                         </label>
                     </form>
-                    <Link to={`/carrinho`}>
+                    <Link to={"/carrinho"}>
                         <div className={styles.buyCar}></div>
                     </Link>
 

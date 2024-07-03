@@ -11,6 +11,7 @@
   background-size: 100% 0%;
   background-repeat: no-repeat;
   transition: background-size 0.3s, box-shadow 0.01s;
+  
 
   & .buttonLogin {
     color: var(---global-font-color);
@@ -28,6 +29,8 @@
   background-image: linear-gradient(to bottom, var(---global-element-color) 100%, var(---global-element-color) 0%);
   background-size: 100% 100%;
   transition: background-size 0.3s, box-shadow 1.2s;
+  box-shadow: 5px 1px 7px 0 rgba(0, 0, 0, 0.3);
+  
 
   & a {
     color: #fff
