@@ -25,7 +25,7 @@ const IndividualProduct = ({data, error,loading}) => {
                     data.map((product) => (
                         <div key={product.id} className={styles.ItemProduct}>
                             {/* <span>{product.oferta}</span> */}
-                            <img src={product.images[0].src} alt={product.name}></img>
+                            {/* <img src={product.images[0].src} alt={product.name}></img> */}
                             <div className={styles.BlockNamePrice}>
                                 <h5>{product.name}</h5>
                                 <h5>{product.categories.name}</h5>

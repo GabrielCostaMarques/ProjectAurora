@@ -11,10 +11,13 @@
     "server": "json-server --watch data/db.json"
   },
   "dependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@tanstack/react-query": "^5.48.0",
     "@woocommerce/woocommerce-rest-api": "^1.0.1",
     "axios": "^1.7.2",
     "axios-oauth-1.0a": "^0.3.6",
+    "base-64": "^1.0.0",
+    "buffer": "^6.0.3",
     "crypto-js": "^4.2.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
@@ -35,6 +38,7 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-node-polyfills": "^0.22.0"
   }
 }

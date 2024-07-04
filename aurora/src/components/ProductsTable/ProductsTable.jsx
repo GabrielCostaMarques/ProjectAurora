@@ -1,18 +1,17 @@
 import styles from './ProductsTable.module.css';
-import { useFetchItems } from '../../hooks/useFetchQuery';
-
+import { useFetchProducts } from '../../hooks/useFetchWoocomerce';
 import IndividualProduct from '../IndividualProduct';
 
- const URL = "http://aurora.local/wp-json/wc/v3/products";
-
+const URL = "products";
 export default function ProductsTable() {
-    const { getRequest } = useFetchItems('products',URL);
+    const { getRequestProducts } = useFetchProducts('products', URL);
 
-    const {isLoading, isError, data}=getRequest
-        
+    const { isLoading, isError, data } = getRequestProducts
+
+
     return (
         <section className={styles.BodyProducts}>
-            <IndividualProduct data ={data} error={isError} loading={isLoading}/>
+            <IndividualProduct data={data} error={isError} loading={isLoading} />
         </section>
     );
 }
