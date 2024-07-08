@@ -5,7 +5,7 @@ import "swiper/css/effect-fade"
 import { useFetchItems } from '../../hooks/useFetchQuery'
 
 
-const URL = "http://aurora.local/wp-json/wp/v2/media"
+ const URL = "https://manualdoagente.com.br/wp-json/wp/v2/media"
 
 
 export default function BodyScreen1() {
