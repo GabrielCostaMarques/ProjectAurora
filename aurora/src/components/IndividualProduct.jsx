@@ -28,7 +28,6 @@ const IndividualProduct = ({data, error,loading}) => {
                             {/* <img src={product.images[0].src} alt={product.name}></img> */}
                             <div className={styles.BlockNamePrice}>
                                 <h5>{product.name}</h5>
-                                <h5>{product.categories.name}</h5>
                                 <h4>R$ {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h4>
                                 
                             </div>

@@ -10,12 +10,9 @@ const BuyCar = () => {
 
   return (
     <section>
-      {items && items.map((post) => (
-        <div key={post.id}>
-          <p dangerouslySetInnerHTML={{ __html: post.content.rendered }}></p>
-          <p>{post.date}</p>
-        </div>
-      ))}
+      <div>
+        <h1>CARRINHO</h1>
+      </div>
     </section>
   );
 }

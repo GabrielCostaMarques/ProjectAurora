@@ -11,10 +11,10 @@ import IndividualProduct from "../components/IndividualProduct";
 const ProductsSearched = () => {
     const [searchParams]=useSearchParams()
     
-    const URL = `http://aurora.local/wp-json/wc/v3/products?${searchParams}`
+    const URL = `http://localhost:3000/products?${searchParams}`
 
     const {getRequest}=useFetchItems('search',URL)
-    const {isError,isLoading,data:items,refetch, }=getRequest
+    const {isError,isLoading,data:items,refetch }=getRequest
 
     const prevSearchParamsRef = useRef();
 

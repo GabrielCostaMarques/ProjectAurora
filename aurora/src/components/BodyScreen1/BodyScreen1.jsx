@@ -4,8 +4,7 @@ import { Autoplay, EffectFade } from "swiper/modules"
 import "swiper/css/effect-fade"
 import { useFetchItems } from '../../hooks/useFetchQuery'
 
-
- const URL = "https://manualdoagente.com.br/wp-json/wp/v2/media"
+ const URL = `http://localhost:3000/imgSlider`
 
 
 export default function BodyScreen1() {
@@ -26,7 +25,7 @@ export default function BodyScreen1() {
                 >
                     {data.map((item) => (
                         <SwiperSlide key={item.id}>
-                            <img src={item.guid.rendered} alt="slider Hero" className={styles.MainBodyContent} />
+                            <img src={item.image} alt="slider Hero" className={styles.MainBodyContent} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

@@ -1,13 +1,12 @@
 import styles from './ProductsTable.module.css';
-import { useFetchProducts } from '../../hooks/useFetchWoocomerce';
+import { useFetchItems } from '../../hooks/useFetchQuery';
 import IndividualProduct from '../IndividualProduct';
 
-const URL = "products";
+const URL = "http://localhost:3000/products";
 export default function ProductsTable() {
-    const { getRequestProducts } = useFetchProducts('products', URL);
+    const { getRequest } = useFetchItems('products', URL);
 
-    const { isLoading, isError, data } = getRequestProducts
-
+    const { isLoading, isError, data } = getRequest
 
     return (
         <section className={styles.BodyProducts}>
