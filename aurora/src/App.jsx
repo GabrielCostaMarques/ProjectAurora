@@ -16,24 +16,33 @@ import LoginForm from './page/LoginForm'
 import ProductsSearched from './page/ProductsSearched'
 import NotFound from './page/NotFound'
 import Teste from './page/Teste'
-import { useAuthentication } from './hooks/useAuthentication'
-import { onAuthStateChanged } from 'firebase/auth'
+// import { useCreateUser } from './hooks/useAuthentication'
+// import { onAuthStateChanged } from 'firebase/auth'
+import { getAuth } from "firebase/auth"; 
 
 function App() {
-  const [user, setUser] = useState(null)
-  const {auth} = useAuthentication()
+  // const [user, setUser] = useState(null)
+  // const {auth} = useCreateUser()
 
-  const loadingUser=user===undefined
-  useEffect(()=>{
-    onAuthStateChanged(auth,(user)=>{ 
-      setUser(user)
-    })
-  },[auth])
+  // const loadingUser=user===undefined
+  // useEffect(()=>{
+  //   onAuthStateChanged(auth,(user)=>{ 
+  //     setUser(user)
+  //   })
+  // },[auth])
 
-  if (loadingUser) {
-    return <p>Carregando...</p>
+  // if (loadingUser) {
+  //   return <p>Carregando...</p>
+  // }]
+
+  const auth = getAuth();
+  const user = auth.currentUser;
+  
+  if (user) {
+    <p>not found</p>
+  } else {
+    // No user is signed in.
   }
-
 
 
 
