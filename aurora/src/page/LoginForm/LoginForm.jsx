@@ -1,7 +1,8 @@
 
-import { useCreateUser } from "../hooks/useAuthentication";
-import { getFirebaseErrorMessage } from "../Exceptions/exceptionLogin";
+import { useCreateUser } from "../../hooks/useAuthentication";
+import { firebaseEmailException, validadePasswordException } from "../../Exceptions/exceptionLogin";
 import { useState } from "react";
+import styles from './LoginForm.module.css'
 
 const LoginForm = () => {
     const [displayName, setDisplayName] = useState("");
@@ -16,26 +17,26 @@ const LoginForm = () => {
         e.preventDefault();
         setErrorMessage("");
 
-        if (password !== confirmPassword) {
-            setErrorMessage("As senhas precisam ser iguais");
-            return;
-        }
 
         const user = { displayName, email, password };
         mutate(user, {
             onError: (error) => {
-                const systemError = getFirebaseErrorMessage(error);
+                const systemError = firebaseEmailException(error);
                 setErrorMessage(systemError);
+
+                const inputError = validadePasswordException(password, confirmPassword)
+                setErrorMessage(inputError)
             },
         });
     };
 
     return (
-        <section>
+        <section className={styles.container}>
             <form onSubmit={handleSubmit}>
-                <label>
+                <label className={styles.campo}>
                     <span>Nome:</span>
                     <input
+                        className={styles.inputLabel}
                         type="text"
                         name="displayName"
                         required
@@ -45,9 +46,10 @@ const LoginForm = () => {
                     />
                 </label>
 
-                <label>
+                <label className={styles.campo}>
                     <span>E-mail:</span>
                     <input
+                        className={styles.inputLabel}
                         type="email"
                         name="email"
                         required
@@ -56,9 +58,10 @@ const LoginForm = () => {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </label>
-                <label>
+                <label className={styles.campo}>
                     <span>Senha:</span>
                     <input
+                        className={styles.inputLabel}
                         type="password"
                         name="password"
                         required
@@ -67,9 +70,10 @@ const LoginForm = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </label>
-                <label>
+                <label className={styles.campo}>
                     <span>Confirme sua senha:</span>
                     <input
+                        className={styles.inputLabel}
                         type="password"
                         name="confirmPassword"
                         required
@@ -78,10 +82,18 @@ const LoginForm = () => {
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                 </label>
-                <button type="submit">Cadastrar</button>
-                {isLoading && <p>Loading...</p>}
-                {isError && <p>Error: {errorMessage}</p>}
-                {isSuccess && <p>Cadastro realizado com sucesso</p>}
+
+                {isLoading && <button className={styles.btnForms disable} type="submit">Carregando</button>}
+                {!isLoading && <button className={styles.btnForms}  type="submit">Cadastrar</button>}
+                {isError && <>
+                    <p>{errorMessage}</p>
+                </>}
+                {isSuccess &&
+                    <>
+                        <button type="submit">Cadastrar</button>
+                        <p>Cadastro realizado com sucesso</p>
+                    </>
+                }
             </form>
         </section>
     );

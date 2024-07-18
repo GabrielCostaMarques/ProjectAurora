@@ -1,0 +1,39 @@
+.container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    & form{
+        border-radius: 5px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        box-shadow: 1px 1px 20px 0.04px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    & .campo{
+        margin:20px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    & .inputLabel{
+        background-color: transparent !important;
+        border-bottom: 1px solid var(---global-element-color) !important;
+        box-shadow: none !important;
+
+    }
+
+    & .btnForms{
+        
+        
+    }
+    & .btnForms :disabled{
+        background-color: var(---global-element-color);
+        opacity: 0.7;
+    }
+}
