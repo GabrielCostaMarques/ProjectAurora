@@ -83,11 +83,11 @@ const LoginForm = () => {
                     />
                 </label>
 
-                {isLoading && <button className={styles.btnForms disable} type="submit">Carregando</button>}
+                {isLoading && <button className={styles.btnForms} type="submit">Carregando</button>}
                 {!isLoading && <button className={styles.btnForms}  type="submit">Cadastrar</button>}
-                {isError && <>
+                {isError && 
                     <p>{errorMessage}</p>
-                </>}
+                }
                 {isSuccess &&
                     <>
                         <button type="submit">Cadastrar</button>
