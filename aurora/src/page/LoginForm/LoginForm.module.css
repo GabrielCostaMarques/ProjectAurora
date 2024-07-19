@@ -32,7 +32,7 @@
     }
 
     & .btnForms{
-                
+         outline: none;       
     }
 
     .btnForms :disabled{
