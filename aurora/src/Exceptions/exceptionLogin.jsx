@@ -19,7 +19,5 @@ export const validadePasswordException = (password, confirmPassword) => {
   if (password !== confirmPassword) {
     functionSet = "As senhas precisam ser iguais";
   }
-  
-  console.log(functionSet);
   return functionSet;
 }
