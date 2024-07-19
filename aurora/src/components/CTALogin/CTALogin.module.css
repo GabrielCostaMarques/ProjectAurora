@@ -11,6 +11,11 @@
 
     & h3{
         color: var(---global-body-color);
+        text-align: center;
+    }
+
+    form{
+        justify-content: space-evenly;
     }
 
     & button{

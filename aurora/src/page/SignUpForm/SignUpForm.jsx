@@ -1,7 +1,7 @@
 import  { useState } from 'react';
 import { useCreateUser } from "../../hooks/useAuthentication";
 import { validadePasswordException,firebaseEmailException } from "../../Exceptions/exceptionLogin";
-import styles from './LoginForm.module.css';
+import styles from './SignUpForm.module.css';
 
 const LoginForm = () => {
   const [displayName, setDisplayName] = useState("");
@@ -85,6 +85,10 @@ const LoginForm = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </label>
+
+        {/* <label>
+          <Navigate to={"/login"}>Ja tem um cadastro?</Navigate>
+        </label> */}
 
         {isLoading && <button className={styles.btnForms.disable} type="submit">Carregando</button>}
         {!isLoading && <button className={styles.btnForms} type="submit">Cadastrar</button>}

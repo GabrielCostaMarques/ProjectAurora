@@ -3,13 +3,17 @@ import styles from './Header.module.css';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 
+// import { useAuthentication } from '../../hooks/useAuthentication';
+
 
 
 
 
 export default function Header() {
 
-    const [statusLogin] = useState(true)
+    const [user,setUser]=useState(true)
+    // const {logout}=useAuthentication()
+
     const [scrolled, setScrolled] = useState(false)
 
     const [search, setSearch] = useState("")
@@ -35,7 +39,7 @@ export default function Header() {
 
     return (
         <header>
-            {statusLogin == false ? (
+            {!user ? (
                 <div className={`${styles.headerContent} ${scrolled ? styles.scrollDown : ""}`}>
                     <Link to={"/"}>
                         <div className={styles.boxLogo}></div>

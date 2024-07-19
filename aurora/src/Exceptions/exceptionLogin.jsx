@@ -21,3 +21,7 @@ export const validadePasswordException = (password, confirmPassword) => {
   }
   return functionSet;
 }
+
+export const validateSignIn=()=>{
+  
+}
