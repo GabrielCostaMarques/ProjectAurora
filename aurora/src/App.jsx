@@ -36,12 +36,7 @@ function App() {
 
   const auth = getAuth();
   const user = auth.currentUser;
-  
-  if (user) {
-    <p>not found</p>
-  } else {
-    // No user is signed in.
-  }
+  console.log(user);
 
 
 
