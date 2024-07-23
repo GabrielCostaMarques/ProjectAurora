@@ -1,30 +1,18 @@
-import { app } from "../config/firebase"
-import { useMutation, useQuery } from 'react-query'
-import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword } from 'firebase/auth'
+import { app, db } from "../config/firebase"
+import { useMutation } from 'react-query'
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 
 
-const auth = getAuth(app);
-
-const createUser = async ({ email, password }) => {
-  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-  return userCredential.user;
-};
-
-const signIn = async (data) => {
-  const login = await signInWithEmailAndPassword(auth, data.email, data.password)
-  return login.user
-}
 
 
-export const useCreateUser = () => {
-  return useMutation(createUser);
-};
+const auth = getAuth(app)
 
-export const logout = () => {
-  signOut(auth)
-}
+const createUser =async (data)=>{
+        const  userCredential = await createUserWithEmailAndPassword(auth,data.email,data.password)
+        return userCredential.user
+    }
+    
 
-export const useLogin = () => {
-  return useQuery(signIn)
-}
-
+    export const useCreateUser = () => {
+        return useMutation(createUser);
+      };
