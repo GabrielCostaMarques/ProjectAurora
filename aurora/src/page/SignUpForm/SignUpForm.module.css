@@ -7,7 +7,7 @@
         border-radius: 5px;
         padding: 20px;
         background-color: #f4f4f4;
-        box-shadow: 1px 1px 20px 0.04px;
+        box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.1);
         justify-content: center;
         display: flex;
         flex-direction: column;
@@ -28,9 +28,12 @@
         box-shadow: none !important;
 
     }
-
-    .inputLabel:focus{
+    & .inputLabel:focus{
         outline: none;
+    }
+
+    & .btnForms{
+         outline: none;       
     }
 
     .btnForms :disabled{
