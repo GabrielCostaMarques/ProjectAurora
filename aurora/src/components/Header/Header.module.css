@@ -53,8 +53,8 @@
 
   & .buyCar {
 
-    width: 40px;
-    height: 40px;
+    width: 37px;
+    height: 37px;
     margin-right: 90px;
     position: fixed;
     top: 20px;
@@ -127,10 +127,10 @@
 
 .buyCar {
 
-  width: 53px;
-  height: 53px;
+  width: 50px;
+  height: 50px;
   position: fixed;
-  top: 20px;
+  top: 23px;
   margin-left: -4.39%;
   cursor: pointer;
   background-image: url("/src/assets/icon-buyCar.png");
@@ -138,10 +138,10 @@
   background-repeat: no-repeat;
 }
 
-.formsContainer{
+.searchContainer{
   display: flex;
   position: fixed;
-  right: -12rem;
+  right: -10rem;
 }
 
 .iconSearch{
@@ -156,6 +156,7 @@
 .inputSearch{
  height: 8px;
  width: 150px;
+ margin-right: 15px;
 }
 
 

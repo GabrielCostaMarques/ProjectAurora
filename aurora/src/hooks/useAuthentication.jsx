@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { app,db } from "../config/firebase";
-import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { firebaseEmailException } from '../exceptions/exceptionLogin';
 
 
@@ -10,23 +10,32 @@ const useAuthentication = () => {
   const [sucess, setSucess] = useState(false);
   const [error, setError] = useState(null);
 
-const createUser = ({email, password}) => {
-  setLoading(true);
-  setError(null);
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      setLoading(false);
-      setSucess(true)
-      return userCredential.user;
-    })
-    .catch((error) => {
-      console.log(error);
-      const apiError=firebaseEmailException(error);
-      setError(apiError);
-      setSucess(false);
-      setLoading(false);
-    });
+  const createUser = async (data) => {
+    setLoading(true)
+    setError("")
+
+
+    try {
+        const { user } = await createUserWithEmailAndPassword(
+            auth,
+            data.email,
+            data.password
+        )
+        await updateProfile(user, {
+            displayName: data.displayName
+        });
+
+        setLoading(false)
+        setSucess(true)
+        return user
+      } catch (error) {
+        const apiError=firebaseEmailException(error)
+        setSucess(false)
+        setError(apiError)
+    }
+
 };
+  
 
 
   const signIn = async ({ email, password }) => {

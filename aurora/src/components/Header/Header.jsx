@@ -52,7 +52,7 @@ export default function Header() {
                         <a href="#projetos">CUSTO BENEFÍCIO</a>
                     </nav>
 
-                    <form className={styles.formsContainer}>
+                    <form className={styles.searchContainer}>
                         <label>
                             <input className={styles.inputSearch} type="text" onChange={(e) => { setSearch(e.target.value) }} value={search} />
                         </label>
@@ -79,7 +79,7 @@ export default function Header() {
                         <a href="#projetos">LUXO</a>
                         <a href="#projetos">CUSTO BENEFÍCIO</a>
                     </nav>
-                    <form onSubmit={handleSubmit} className={styles.formsContainer}>
+                    <form onSubmit={handleSubmit} className={styles.searchContainer}>
                         <label>
                             <input className={styles.inputSearch} type="text" onChange={(e) => { setSearch(e.target.value) }} value={search} />
                         </label>
