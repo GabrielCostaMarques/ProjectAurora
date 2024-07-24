@@ -1,35 +1,56 @@
-import  { useState } from 'react';
-import { useLogin } from "../../hooks/useAuthentication";
-
-import { firebaseEmailException } from "../../Exceptions/exceptionLogin";
-import styles from './Login.module.css';
+import { useCreateUser } from "../../hooks/useAuthentication";
+import { firebaseEmailException, validadePasswordException } from "../../Exceptions/exceptionLogin";
+import { useState } from "react";
+import styles from './Login.module.css'
 
 const LoginForm = () => {
+  const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
+<<<<<<< HEAD
   const { data,isError, isLoading, isSuccess } = useLogin();
+=======
+  const { mutate, isError, isLoading, isSuccess } = useCreateUser();
+>>>>>>> e5d6f414353a0e8f37b40f65e56c44b18bfb7cd4
 
-  const useHandleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage(null);
 
+    const inputError = validadePasswordException(password, confirmPassword);
+    if (inputError) {
+      setErrorMessage(inputError);
+      return;
+    }
 
-    const user = { email, password };
+    const user = { displayName, email, password };
     
-    data(user, {
+    mutate(user, {
       onError: (error) => {
-        const systemError = firebaseEmailException(error);
-        setErrorMessage(systemError);
-        
-      },
+        const errorApi=firebaseEmailException(error)
+        setErrorMessage(errorApi);
+      }
     });
   };
 
   return (
     <section className={styles.container}>
-      <form onSubmit={useHandleSubmit}>
+      <form onSubmit={handleSubmit}>
+        <label className={styles.campo}>
+          <span>Nome:</span>
+          <input
+            className={styles.inputLabel}
+            type="text"
+            name="displayName"
+            required
+            placeholder="Nome de Usuário"
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
+          />
+        </label>
 
         <label className={styles.campo}>
           <span>E-mail:</span>
@@ -55,15 +76,29 @@ const LoginForm = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
+        <label className={styles.campo}>
+          <span>Confirme sua senha:</span>
+          <input
+            className={styles.inputLabel}
+            type="password"
+            name="confirmPassword"
+            required
+            placeholder="Confirme sua senha"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </label>
 
-        {isLoading && <button className={styles.btnForms.disable} type="submit">Entrando</button>}
-        {!isLoading && <button className={styles.btnForms} type="submit">Entrar</button>}
-        {isError && <p>{errorMessage}</p>}
-        {isSuccess && (
+        {isLoading && <button className={styles.btnForms} type="submit">Carregando</button>}
+        {!isLoading && <button className={styles.btnForms} type="submit">Cadastrar</button>}
+        {isError &&
+          <p>{errorMessage}</p>
+        }
+        {isSuccess &&
           <>
             <p>Cadastro realizado com sucesso</p>
           </>
-        )}
+        }
       </form>
     </section>
   );
