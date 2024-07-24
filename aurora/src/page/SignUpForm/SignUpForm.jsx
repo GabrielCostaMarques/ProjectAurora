@@ -1,7 +1,9 @@
 import  { useState } from 'react';
-import { useCreateUser } from "../../hooks/useAuthentication";
-import { validadePasswordException,firebaseEmailException } from "../../Exceptions/exceptionLogin";
+
+import { firebaseEmailException, validadePasswordException } from "../../exceptions/exceptionLogin";
 import styles from './SignUpForm.module.css';
+
+import useAuthentication from '../../hooks/useAuthentication';
 
 const LoginForm = () => {
   const [displayName, setDisplayName] = useState("");
@@ -10,28 +12,32 @@ const LoginForm = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const { mutate, isError, isLoading, isSuccess } = useCreateUser();
+  const {
+    createUser,
+    loading,
+    error,sucess } = useAuthentication();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage(null);
 
+    const user = { email, password };
 
-    const user = { displayName, email, password };
-    
-    mutate(user, {
-      onError: (error) => {
-        const systemError = firebaseEmailException(error);
-        setErrorMessage(systemError);
-        
+    try {
+      await createUser(user)
+      
+    } catch (error) {
+      const apiError=firebaseEmailException(error);
+      setErrorMessage(apiError);
+    }
+
     const inputError = validadePasswordException(password, confirmPassword);
     if (inputError) {
       setErrorMessage(inputError);
       return;
     }
-      },
-    });
-  };
+  }
+        
 
   return (
     <section className={styles.container}>
@@ -90,14 +96,15 @@ const LoginForm = () => {
           <Navigate to={"/login"}>Ja tem um cadastro?</Navigate>
         </label> */}
 
-        {isLoading && <button className={styles.btnForms.disable} type="submit">Carregando</button>}
-        {!isLoading && <button className={styles.btnForms} type="submit">Cadastrar</button>}
-        {isError && <p>{errorMessage}</p>}
-        {isSuccess && (
-          <>
-            <p>Cadastro realizado com sucesso</p>
-          </>
-        )}
+        {loading && <button className={styles.btnForms.disable} type="submit">Carregando</button>}
+        {!loading && <button className={styles.btnForms} type="submit">Cadastrar</button>}
+        {error && <p>{errorMessage}</p>}
+        {sucess && 
+        <>
+        <p>Cadastro Realizado com Sucesso</p>
+   
+        </>
+        }
       </form>
     </section>
   );

@@ -2,8 +2,9 @@ import styles from './Header.module.css';
 
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuthValue } from '../../context/authContext';
 
-// import { useAuthentication } from '../../hooks/useAuthentication';
+
 
 
 
@@ -11,8 +12,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export default function Header() {
 
-    const [user,setUser]=useState(true)
-    // const {logout}=useAuthentication()
+    const { user } = useAuthValue()
 
     const [scrolled, setScrolled] = useState(false)
 
@@ -60,8 +60,8 @@ export default function Header() {
                             <span onClick={handleSubmit} className={styles.iconSearch}></span>
                         </label>
                     </form>
-                    <Link to={`/login`}>
-                        <a className={styles.buttonLogin}>LOGIN</a>
+                    <Link to={`/signUp`}>
+                        <span className={styles.buttonLogin}>LOGIN</span>
                     </Link>
 
 

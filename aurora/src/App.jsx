@@ -16,15 +16,14 @@ import SignUp from './page/SignUpForm/SignUpForm'
 import ProductsSearched from './page/ProductsSearched'
 import NotFound from './page/NotFound'
 import Teste from './page/Teste'
-
+import useAuthentication from './hooks/useAuthentication'
 import { onAuthStateChanged } from 'firebase/auth'
-import { useAuthentication } from './hooks/useAuthentication'
 
 
 
 function App() {
-  const [user,setUser]=useState(undefined)
-  const {auth}=useAuthentication() 
+  const [user, setUser] = useState(undefined)
+  const { auth } = useAuthentication()
 
 
   //segmentação para que quando o usuário estiver carregando, nada do blog carregue antes de o user receber alguma info
@@ -41,14 +40,18 @@ function App() {
 
 
 
+
+
+
+
   return (
     <>
-      <AuthProvider value={{user}}>
+      <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/signUp" element={< SignUp/>} />
+            <Route path="/signUp" element={< SignUp />} />
             <Route path="/carrinho" element={<BuyCar />} />
             <Route path="/teste" element={<Teste />} />
             <Route path="/search" element={<ProductsSearched />} />

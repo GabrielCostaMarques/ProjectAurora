@@ -10,7 +10,6 @@ export const firebaseEmailException = (error) => {
   else {
     systemError = "Houve Algum erro";
   }
-  console.log(systemError);
   return systemError;
 };
 
