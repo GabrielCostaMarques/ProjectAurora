@@ -20,11 +20,11 @@ const createUser = ({email, password}) => {
       return userCredential.user;
     })
     .catch((error) => {
-      console.log(error.code);
+      console.log(error);
+      const apiError=firebaseEmailException(error);
+      setError(apiError);
       setSucess(false);
       setLoading(false);
-      const apiError=firebaseEmailException(error.code);
-      setError(apiError);
     });
 };
 
