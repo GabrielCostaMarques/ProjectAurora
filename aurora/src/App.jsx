@@ -48,7 +48,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/signUp" element={< SignUp />} />
             <Route path="/signIn" element={< Login />} />
-            <Route path="/carrinho" element={!user?(<BuyCar/>):(<Navigate to="/"/>)} />
+            <Route path="/carrinho" element={!user?<Navigate to="/"/>:<BuyCar/>} />
             <Route path="/teste" element={<Teste />} />
             <Route path="/search" element={<ProductsSearched />} />
             <Route path="/products/:id" element={<ProductSingle />} />
