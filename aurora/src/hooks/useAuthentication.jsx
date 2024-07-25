@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { app,db } from "../config/firebase";
+import { app, db } from "../config/firebase";
 import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { firebaseEmailException } from '../exceptions/exceptionLogin';
 
@@ -12,30 +12,23 @@ const useAuthentication = () => {
 
   const createUser = async (data) => {
     setLoading(true)
-    setError("")
-
-
     try {
-        const { user } = await createUserWithEmailAndPassword(
-            auth,
-            data.email,
-            data.password
-        )
-        await updateProfile(user, {
-            displayName: data.displayName
-        });
-
-        setLoading(false)
-        setSucess(true)
-        return user
-      } catch (error) {
-        const apiError=firebaseEmailException(error)
-        setSucess(false)
-        setError(apiError)
+      const { user } = await createUserWithEmailAndPassword(auth,data.email,data.password)
+      await updateProfile(user, {displayName: data.displayName});
+      setSucess(true)
+      setLoading(false)
+      setError(null)
+      return user;
+      
+    } catch (error) {
+      const apiError = firebaseEmailException(error)
+      setLoading(false)
+      setSucess(false)
+      setError(apiError)
     }
 
-};
-  
+  };
+
 
 
   const signIn = async ({ email, password }) => {

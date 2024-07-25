@@ -60,7 +60,7 @@ export default function Header() {
                             <span onClick={handleSubmit} className={styles.iconSearch}></span>
                         </label>
                     </form>
-                    <Link to={`/signUp`}>
+                    <Link to={`/signIn`}>
                         <span className={styles.buttonLogin}>LOGIN</span>
                     </Link>
 

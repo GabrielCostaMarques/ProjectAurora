@@ -6,7 +6,7 @@ import Header from './components/Header/Header'
 
 import { useEffect, useState } from 'react'
 import { AuthProvider } from './context/authContext'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes, } from 'react-router-dom'
 
 
 import Home from './page/Home'
@@ -16,6 +16,7 @@ import SignUp from './page/SignUpForm/SignUpForm'
 import ProductsSearched from './page/ProductsSearched'
 import NotFound from './page/NotFound'
 import Teste from './page/Teste'
+import Login from './page/Login/Login'
 import useAuthentication from './hooks/useAuthentication'
 import { onAuthStateChanged } from 'firebase/auth'
 
@@ -33,26 +34,21 @@ function App() {
       setUser(user)
     })
   },[auth])
-
+  
   if (loadingUser) {
     return <p>Carregando...</p>
   }
 
-
-
-
-
-
-
   return (
     <>
-      <AuthProvider value={{ user }}>
+      <AuthProvider value={ {user} }>
         <BrowserRouter>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signUp" element={< SignUp />} />
-            <Route path="/carrinho" element={<BuyCar />} />
+            <Route path="/signIn" element={< Login />} />
+            <Route path="/carrinho" element={!user?(<BuyCar/>):(<Navigate to="/"/>)} />
             <Route path="/teste" element={<Teste />} />
             <Route path="/search" element={<ProductsSearched />} />
             <Route path="/products/:id" element={<ProductSingle />} />

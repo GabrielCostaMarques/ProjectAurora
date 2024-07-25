@@ -6,7 +6,7 @@ const BuyCar = () => {
   const { getRequest } = useFetchItems('testeWord', URL);
   const { data: items } = getRequest;
 
-  console.log(items);
+
 
   return (
     <section>
