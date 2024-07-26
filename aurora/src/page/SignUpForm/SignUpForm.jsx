@@ -4,7 +4,7 @@ import { validadePasswordException } from "../../exceptions/exceptionLogin";
 import styles from './SignUpForm.module.css';
 
 import useAuthentication from '../../hooks/useAuthentication';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const [displayName, setDisplayName] = useState("");
@@ -13,10 +13,10 @@ const LoginForm = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const {createUser,loading,error, sucess } = useAuthentication();
-  const navigate=useNavigate()
+  const { createUser, loading, error, sucess } = useAuthentication();
+  const navigate = useNavigate()
 
-    const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     setErrorMessage(null);
     e.preventDefault();
 
@@ -24,23 +24,23 @@ const LoginForm = () => {
     if (inputError) {
       setErrorMessage(inputError);
       return console.log(errorMessage);
-    } 
+    }
 
-      const user = { displayName, email, password };
-      await createUser(user);
+    const user = { displayName, email, password };
+    await createUser(user);
 
 
   }
   useEffect(() => {
-      if (error) {
-          setErrorMessage(error)
-      }
-      if (sucess) {
-        setTimeout(() => {
-          navigate("/");
-        }, 800);
-      } 
-  }, [error,sucess,navigate])
+    if (error) {
+      setErrorMessage(error)
+    }
+    if (sucess) {
+      setTimeout(() => {
+        navigate("/");
+      }, 800);
+    }
+  }, [error, sucess, navigate])
 
   return (
     <section className={styles.container}>
@@ -97,7 +97,7 @@ const LoginForm = () => {
         <label>
           <Link to={"/signIn"}>Já tem uma conta?</Link>
         </label>
-  
+
 
         {loading && <button className={styles.btnForms.disable}>Carregando</button>}
         {!loading && <button className={styles.btnForms} type="submit">Cadastrar</button>}

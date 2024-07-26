@@ -46,10 +46,10 @@ export default function Header() {
                     </Link>
 
                     <nav>
-                        <a href="#overview">OVERVIEW</a>
-                        <a href="#projetos">PROMOÇÕES</a>
-                        <a href="#projetos">LUXO</a>
-                        <a href="#projetos">CUSTO BENEFÍCIO</a>
+                        <span>OVERVIEW</span>
+                        <span>PROMOÇÕES</span>
+                        <span>LUXO</span>
+                        <span>CUSTO BENEFÍCIO</span>
                     </nav>
 
                     <form className={styles.searchContainer}>
@@ -73,11 +73,11 @@ export default function Header() {
                     </Link>
 
                     <nav>
-                       <a href="#overview">OVERVIEW</a>
-                        
-                        <a href="#projetos">PROMOÇÕES</a>
-                        <a href="#projetos">LUXO</a>
-                        <a href="#projetos">CUSTO BENEFÍCIO</a>
+                        <span>OVERVIEW</span>
+
+                        <span>PROMOÇÕES</span>
+                        <span>LUXO</span>
+                        <span>CUSTO BENEFÍCIO</span>
                     </nav>
                     <form onSubmit={handleSubmit} className={styles.searchContainer}>
                         <label>
@@ -90,9 +90,6 @@ export default function Header() {
                     <Link to={"/carrinho"}>
                         <div className={styles.buyCar}></div>
                     </Link>
-
-
-
 
                 </div>
             )}
