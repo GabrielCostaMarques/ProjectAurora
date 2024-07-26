@@ -5,7 +5,7 @@ export const firebaseEmailException = (error) => {
    systemError = "Endereço de E-mail já usado";
   }
   else if(error.code==="auth/weak-password"){
-    systemError="Senha deve ter pelo menos 6 Caracteres"
+    systemError="Senha deve ter pelo menos 6 caracteres"
   }
   else {
     systemError = "Houve Algum erro";

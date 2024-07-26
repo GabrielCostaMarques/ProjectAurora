@@ -4,6 +4,7 @@ import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPas
 import { firebaseEmailException } from '../exceptions/exceptionLogin';
 
 
+
 const useAuthentication = () => {
   const auth = getAuth(app);
   const [loading, setLoading] = useState(false);
@@ -15,15 +16,17 @@ const useAuthentication = () => {
     try {
       const { user } = await createUserWithEmailAndPassword(auth,data.email,data.password)
       await updateProfile(user, {displayName: data.displayName});
-      setSucess(true)
+
+      setSucess(true) 
       setLoading(false)
       setError(null)
+      
       return user;
       
     } catch (error) {
+      setSucess(false)
       const apiError = firebaseEmailException(error)
       setLoading(false)
-      setSucess(false)
       setError(apiError)
     }
 

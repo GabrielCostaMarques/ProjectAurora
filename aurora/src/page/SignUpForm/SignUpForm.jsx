@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { validadePasswordException } from "../../exceptions/exceptionLogin";
 import styles from './SignUpForm.module.css';
 
 import useAuthentication from '../../hooks/useAuthentication';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const [displayName, setDisplayName] = useState("");
@@ -13,32 +13,34 @@ const LoginForm = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const {
-    createUser,
-    loading,
-    error, sucess } = useAuthentication();
-    
+  const {createUser,loading,error, sucess } = useAuthentication();
+  const navigate=useNavigate()
+
     const handleSubmit = async (e) => {
     setErrorMessage(null);
     e.preventDefault();
-    
-    
-    const user = { displayName, email, password };
+
     const inputError = validadePasswordException(password, confirmPassword);
-    
     if (inputError) {
       setErrorMessage(inputError);
-      return errorMessage
-    } else {
-      setErrorMessage(null);
-      await createUser(user)
-      if (error) {
-        setErrorMessage(error)
-      }
+      return console.log(errorMessage);
+    } 
 
-    }
+      const user = { displayName, email, password };
+      await createUser(user);
+
+
   }
-
+  useEffect(() => {
+      if (error) {
+          setErrorMessage(error)
+      }
+      if (sucess) {
+        setTimeout(() => {
+          navigate("/");
+        }, 800);
+      } 
+  }, [error,sucess,navigate])
 
   return (
     <section className={styles.container}>
@@ -99,7 +101,7 @@ const LoginForm = () => {
 
         {loading && <button className={styles.btnForms.disable}>Carregando</button>}
         {!loading && <button className={styles.btnForms} type="submit">Cadastrar</button>}
-        {error && <p>{errorMessage}</p>}
+        {errorMessage && <p>{errorMessage}</p>}
         {sucess &&
           <>
             <p>Cadastro Realizado com Sucesso</p>
