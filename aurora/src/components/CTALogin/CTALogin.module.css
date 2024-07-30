@@ -4,9 +4,8 @@
     background-attachment: fixed;
     object-fit: cover;
     background-repeat: no-repeat;
-    height: 200px;
+    
     display: flex;
-    justify-content: space-around;
     align-items: center;
 
     & h3{
@@ -25,5 +24,13 @@
     & button:hover{
         border: 1px solid var(---global-body-color);
         color: var(---global-body-color);
+    }
+}
+
+
+@media only screen and (max-width:768px){
+    .ImgParallax{
+        width: 100%;
+        justify-content: center;
     }
 }

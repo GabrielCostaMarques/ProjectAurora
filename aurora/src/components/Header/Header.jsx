@@ -5,6 +5,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useAuthValue } from '../../context/authContext';
 
 import { FaAlignJustify, FaTimes } from "react-icons/fa";
+import { FaCartShopping } from "react-icons/fa6";
+
+
+
 
 
 
@@ -38,7 +42,7 @@ export default function Header() {
     }
     window.addEventListener("scroll", handleScroll)
 
-    const navRef=useRef()
+    const navRef = useRef()
     // const showNavbar=()=>{
     //     navRef.current.classList.toggle("responsive_nav")
     // }
@@ -57,9 +61,9 @@ export default function Header() {
                         <span>PROMOÇÕES</span>
                         <span>LUXO</span>
                         <span>CUSTO BENEFÍCIO</span>
-                    <div className={styles.toggleOpenMenu}><FaAlignJustify/></div>    
-                    <div className={styles.toggleCloseMenu}><FaTimes /></div> 
                     </nav>
+                    <div className={styles.toggleOpenMenu}><FaAlignJustify size={50}/></div>
+                    <div className={styles.toggleCloseMenu}><FaTimes size={50}/></div>
 
                     <form className={styles.searchContainer}>
                         <label>
@@ -73,7 +77,7 @@ export default function Header() {
                         <span className={styles.buttonLogin}>LOGIN</span>
                     </Link>
 
-                    
+
 
 
                 </div>
@@ -88,9 +92,9 @@ export default function Header() {
                         <span>PROMOÇÕES</span>
                         <span>LUXO</span>
                         <span>CUSTO BENEFÍCIO</span>
-                            <div className={styles.toggleOpenMenu}><FaAlignJustify /></div> 
-                            <div className={styles.toggleCloseMenu}><FaTimes/></div> 
                     </nav>
+                  <FaAlignJustify className={styles.toggleOpenMenu}/>
+                    <FaTimes className={styles.toggleCloseMenu}/>
                     <form onSubmit={handleSubmit} className={styles.searchContainer}>
                         <label>
                             <input className={styles.inputSearch} type="text" onChange={(e) => { setSearch(e.target.value) }} value={search} />
@@ -100,7 +104,7 @@ export default function Header() {
                         </label>
                     </form>
                     <Link to={"/carrinho"}>
-                        <div className={styles.buyCar}></div>
+                        <FaCartShopping className={styles.buyCar}/>
                     </Link>
                 </div>
             )}

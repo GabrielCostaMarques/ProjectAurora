@@ -32,7 +32,7 @@ export default function NewLestter() {
                     <input type="text" name="name" placeholder="Nome..." onChange={(e) => {setName(e.target.value)}} value={name} required />
                 </label>
                 <label htmlFor="email">
-                    <input type="email" name="name" placeholder="Email..." onChange={(e) => {setEmail(e.target.value)}} value={email} required/>
+                    <input type="email" name="email" placeholder="Email..." onChange={(e) => {setEmail(e.target.value)}} value={email} required/>
                 </label>
                 <label >
                     {!isLoading?(<button type="submit">Enviar</button>):(<button type="submit" disabled>Carregando...</button>) }

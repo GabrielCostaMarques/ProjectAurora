@@ -43,61 +43,13 @@
   }
 }
 
-.scrollDown {
-  background-image: linear-gradient(to bottom, var(--global-glass-color) 100%, var(--global-glass-color) 0%);
-  background-size: 100% 100%;
-  transition: background-size 0.3s, box-shadow 1.2s, backdrop-filter 1s;
-  box-shadow: 5px 1px 7px 0 rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(15px);
-
-
-  & span,
-  .buttonLogin {
-    color: var(---global-body-color);
-  }
-
-  & span:hover,
-  .buttonLogin:hover {
-    color: var(---global-element-secundary-color);
-  }
-
-  & span::after,
-  .buttonLogin::after {
-    background-color: var(---global-element-secundary-color);
-  }
-
-  & .boxLogo {
-    background-image: url("../../assets/logo-aurora-negativo.png") !important;
-  }
-
-  & .buyCar {
-    width: 37px;
-    height: 37px;
-    margin-right: 90px;
-    position: fixed;
-    top: 20px;
-    margin-left: -4%;
-    cursor: pointer;
-    background-image: url("../../assets/icon-buy-car-negativo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
-  & .iconSearch {
-    background-image: url("../../assets/icon-search-negativo.png");
-  }
-
-  & .searchContainer label::after {
-    background-color: var(---global-element-secundary-color);
-  }
-}
 
 & nav {
   width: 100%;
   text-align: center;
   display: inline-block;
   cursor: pointer;
-
+  
   & span {
     margin-right: 50px;
     color: var(---global-font-color);
@@ -105,12 +57,13 @@
     letter-spacing: 2px;
     position: relative;
     text-decoration: none;
+    transition: 0.4s;
   }
-
+  
   & span:hover {
     color: var(---global-element-color);
   }
-
+  
   & span::after {
     content: "";
     position: absolute;
@@ -122,7 +75,7 @@
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }
-
+  
   & span:hover::after {
     transform: scaleX(1);
   }
@@ -136,6 +89,7 @@
   outline: none;
   visibility: hidden;
   opacity: 0;
+  
 }
 .toggleOpenMenu:hover,
 .toggleCloseMenu:hover {
@@ -152,18 +106,21 @@
   object-fit: contain;
   background-repeat: no-repeat;
   height: 40px;
+  transition: 0.4s;
 }
 
 .buyCar {
-  width: 50px;
-  height: 50px;
+  width: 37px;
+  height: 37px;
+  margin-right: 90px;
   position: fixed;
-  top: 23px;
-  margin-left: -4.39%;
+  top: 25px;
+  margin-left: -4%;
   cursor: pointer;
-  background-image: url("/src/assets/icon-buyCar.png");
   background-size: contain;
   background-repeat: no-repeat;
+  transition: 0.4s;
+  color: var(---global-element-color);
 }
 
 .searchContainer {
@@ -177,6 +134,7 @@
   cursor: pointer;
   width: 20px;
   height: 20px;
+  transition:background 0.4s;
   background: url("../../assets/icon-search-positivo.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -207,11 +165,101 @@
   transform: scaleX(1);
 }
 
-@media only screen and (max-width: 769px) {
+.scrollDown {
+  background-image: linear-gradient(to bottom, var(--global-glass-color) 100%, var(--global-glass-color) 0%);
+  background-size: 100% 100%;
+  transition: background-size 0.3s, box-shadow 1.2s, backdrop-filter 1s;
+  box-shadow: 5px 1px 7px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+
+
+  & span,
+  .buttonLogin {
+    transition:color 0.5s;
+    color: var(---global-body-color);
+  }
+
+  & span:hover,
+  .buttonLogin:hover {
+    color: var(---global-element-secundary-color);
+  }
+
+  & span::after,
+  .buttonLogin::after {
+    background-color: var(---global-element-secundary-color);
+  }
+
+  & .boxLogo {
+    transition:background-image 0.5s;
+    background-image: url("../../assets/logo-aurora-negativo.png");
+    position: fixed;
+    margin-left: 50px;
+    background-size: contain;
+    top: 20px;
+    width: 200px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    height: 40px;
+  }
+
+  & .buyCar {
+    width: 37px;
+    height: 37px;
+    margin-right: 90px;
+    position: fixed;
+    top: 25px;
+    margin-left: -4%;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition:color 0.5s ;
+    color: var(---global-body-color);
+  }
+
+  & .iconSearch {
+    transition:background-image 0.5s ;
+    background-image: url("../../assets/icon-search-negativo.png");
+  }
+  
+  & .searchContainer label::after {
+    background-color: var(---global-element-secundary-color);
+  }
   .toggleOpenMenu,
-  .toggleCloseMenu {
+  .toggleCloseMenu{
+    color: var(---global-body-color);
+    transition: 0.5s;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  
+  
+  .headerContent{
+    justify-content: space-between;
+    
+    
+    .boxLogo{
+      margin: 0;
+      position: fixed;
+      width: 150px;
+      left: 29%;
+    }
+
+    .buyCar{
+      position: fixed;
+      left: 90%;
+      top: 20px;
+    }
+  }
+  .toggleOpenMenu {
     visibility: visible;
     opacity: 1;
+    left: 3%;
+    top: 25px;
+    height: auto;
+    width: 25px;
+    transition: 0.5s;
+    
   }
   header nav {
     position: fixed;
@@ -219,7 +267,6 @@
     top: 0;
     left: 0;
     height: 100%;
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -234,5 +281,7 @@
 .searchContainer{
   display: none;
 }
+
+
   
 }
