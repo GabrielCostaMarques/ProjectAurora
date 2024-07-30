@@ -10,11 +10,16 @@ label{
     justify-content: center;
     margin: 20px 10px;
 
-    & input{
+     input{
         background-color: var(---global-body-color);
+        
+    }
+     input:focus{
+        outline: none;
+        
     }
 
-    & button{
+     button{
         width: 137px;
     }
 }
