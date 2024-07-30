@@ -7,11 +7,10 @@
   position: fixed;
   z-index: 10;
   align-items: center;
-  background-image: linear-gradient(to top, var(---global-element-color) 0%, var(---global-element-color) 100%);
+  background-image: linear-gradient(to top, var(--global-glass-color) 0%, var(--global-glass-color) 100%);
   background-size: 100% 0%;
   background-repeat: no-repeat;
-  transition: background-size 0.3s, box-shadow 0.01s;
-  
+  transition: background-size 0.5s, box-shadow 0.01s;
 
   & .buttonLogin {
     color: var(---global-font-color);
@@ -26,7 +25,6 @@
   & .buttonLogin:hover {
     color: var(---global-element-color);
   }
-
 
   & .buttonLogin::after {
     content: "";
@@ -46,31 +44,33 @@
 }
 
 .scrollDown {
-  background-image: linear-gradient(to bottom, var(---global-element-color) 100%, var(---global-element-color) 0%);
+  background-image: linear-gradient(to bottom, var(--global-glass-color) 100%, var(--global-glass-color) 0%);
   background-size: 100% 100%;
-  transition: background-size 0.3s, box-shadow 1.2s;
+  transition: background-size 0.3s, box-shadow 1.2s, backdrop-filter 1s;
   box-shadow: 5px 1px 7px 0 rgba(0, 0, 0, 0.3);
-  
+  backdrop-filter: blur(15px);
 
-  & span,.buttonLogin {
+
+  & span,
+  .buttonLogin {
     color: var(---global-body-color);
   }
 
-  & span:hover,.buttonLogin:hover {
+  & span:hover,
+  .buttonLogin:hover {
     color: var(---global-element-secundary-color);
   }
 
-  & span::after,.buttonLogin::after {
+  & span::after,
+  .buttonLogin::after {
     background-color: var(---global-element-secundary-color);
   }
 
   & .boxLogo {
     background-image: url("../../assets/logo-aurora-negativo.png") !important;
-
   }
 
   & .buyCar {
-
     width: 37px;
     height: 37px;
     margin-right: 90px;
@@ -81,18 +81,16 @@
     background-image: url("../../assets/icon-buy-car-negativo.png");
     background-size: contain;
     background-repeat: no-repeat;
-
   }
 
-  & .iconSearch{
+  & .iconSearch {
     background-image: url("../../assets/icon-search-negativo.png");
   }
-  
-  & .searchContainer label::after{
-    background-color: var(---global-element-secundary-color); 
+
+  & .searchContainer label::after {
+    background-color: var(---global-element-secundary-color);
   }
 }
-
 
 & nav {
   width: 100%;
@@ -113,7 +111,6 @@
     color: var(---global-element-color);
   }
 
-
   & span::after {
     content: "";
     position: absolute;
@@ -129,10 +126,21 @@
   & span:hover::after {
     transform: scaleX(1);
   }
-
-
 }
-
+.toggleOpenMenu,
+.toggleCloseMenu {
+  position: fixed;
+  background-color: transparent;
+  border: none;
+  color: var(---global-element-color);
+  outline: none;
+  visibility: hidden;
+  opacity: 0;
+}
+.toggleOpenMenu:hover,
+.toggleCloseMenu:hover {
+  border: none;
+}
 
 .boxLogo {
   position: fixed;
@@ -146,9 +154,7 @@
   height: 40px;
 }
 
-
 .buyCar {
-
   width: 50px;
   height: 50px;
   position: fixed;
@@ -160,15 +166,14 @@
   background-repeat: no-repeat;
 }
 
-.searchContainer{
+.searchContainer {
   display: flex;
   position: fixed;
   right: 13rem;
   width: 210px !important;
 }
 
-
-.iconSearch{
+.iconSearch {
   cursor: pointer;
   width: 20px;
   height: 20px;
@@ -177,16 +182,16 @@
   background-size: contain;
 }
 
-.inputSearch{
- height: 8px;
- width: 150px;
- margin-right: 15px;
+.inputSearch {
+  height: 8px;
+  width: 150px;
+  margin-right: 15px;
 }
-.inputSearch:focus{
- outline: none;
+.inputSearch:focus {
+  outline: none;
 }
 
-.searchContainer label::after{
+.searchContainer label::after {
   content: "";
   position: absolute;
   display: block;
@@ -198,16 +203,36 @@
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
-.searchContainer label:hover::after{
+.searchContainer label:hover::after {
   transform: scaleX(1);
 }
 
-
-
-
-@media(max-width:769px) {
-    .headerContent{
-      width: 100%;
-      overflow: hidden;
-    }
+@media only screen and (max-width: 769px) {
+  .toggleOpenMenu,
+  .toggleCloseMenu {
+    visibility: visible;
+    opacity: 1;
+  }
+  header nav {
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: rgba(60, 125, 69, 0.8);
+    transition: 1s;
+    transform: translateY(-100vh);
+  }
+  header .responsive_nav {
+    transform: none;
+  }
+.searchContainer{
+  display: none;
+}
+  
 }

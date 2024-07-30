@@ -6,7 +6,8 @@
     ---global-font-color:#000;
     ---global-element-color:#3C7D45;
     ---global-element-secundary-color:#B6E8B7;
-    --global-element-input-color:rgba(0,0,0,0.5)
+    --global-element-input-color:rgba(0,0,0,0.5);
+    --global-glass-color:rgba(60, 125, 69, 0.8);
     scroll-behavior: smooth; /*ancora desce suave*/
   }
   

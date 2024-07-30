@@ -46,7 +46,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/signUp" element={< SignUp />} />
+            <Route path="/signUp" element={user?<Navigate to="/"/>:<SignUp/>} />
             <Route path="/signIn" element={< Login />} />
             <Route path="/carrinho" element={!user?<Navigate to="/"/>:<BuyCar/>} />
             <Route path="/teste" element={<Teste />} />

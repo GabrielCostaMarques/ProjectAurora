@@ -23,7 +23,7 @@ const LoginForm = () => {
     const inputError = validadePasswordException(password, confirmPassword);
     if (inputError) {
       setErrorMessage(inputError);
-      return console.log(errorMessage);
+      return errorMessage;
     }
 
     const user = { displayName, email, password };

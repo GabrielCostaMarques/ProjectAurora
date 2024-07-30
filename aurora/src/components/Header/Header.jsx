@@ -1,8 +1,10 @@
 import styles from './Header.module.css';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuthValue } from '../../context/authContext';
+
+import { FaAlignJustify, FaTimes } from "react-icons/fa";
 
 
 
@@ -36,6 +38,11 @@ export default function Header() {
     }
     window.addEventListener("scroll", handleScroll)
 
+    const navRef=useRef()
+    // const showNavbar=()=>{
+    //     navRef.current.classList.toggle("responsive_nav")
+    // }
+
 
     return (
         <header>
@@ -45,11 +52,13 @@ export default function Header() {
                         <div className={styles.boxLogo}></div>
                     </Link>
 
-                    <nav>
+                    <nav ref={navRef}>
                         <span>OVERVIEW</span>
                         <span>PROMOÇÕES</span>
                         <span>LUXO</span>
                         <span>CUSTO BENEFÍCIO</span>
+                    <div className={styles.toggleOpenMenu}><FaAlignJustify/></div>    
+                    <div className={styles.toggleCloseMenu}><FaTimes /></div> 
                     </nav>
 
                     <form className={styles.searchContainer}>
@@ -64,6 +73,8 @@ export default function Header() {
                         <span className={styles.buttonLogin}>LOGIN</span>
                     </Link>
 
+                    
+
 
                 </div>
             ) : (
@@ -72,12 +83,13 @@ export default function Header() {
                         <div className={styles.boxLogo}></div>
                     </Link>
 
-                    <nav>
+                    <nav ref={navRef}>
                         <span>OVERVIEW</span>
-
                         <span>PROMOÇÕES</span>
                         <span>LUXO</span>
                         <span>CUSTO BENEFÍCIO</span>
+                            <div className={styles.toggleOpenMenu}><FaAlignJustify /></div> 
+                            <div className={styles.toggleCloseMenu}><FaTimes/></div> 
                     </nav>
                     <form onSubmit={handleSubmit} className={styles.searchContainer}>
                         <label>
@@ -90,7 +102,6 @@ export default function Header() {
                     <Link to={"/carrinho"}>
                         <div className={styles.buyCar}></div>
                     </Link>
-
                 </div>
             )}
         </header>
