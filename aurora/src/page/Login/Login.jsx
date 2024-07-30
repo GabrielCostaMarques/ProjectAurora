@@ -8,7 +8,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const {signIn,loading, sucess,error } = useAuthentication();
+  const { signIn, loading, sucess, error } = useAuthentication();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +23,7 @@ const LoginForm = () => {
 
   return (
     <section className={styles.container}>
-      <form onSubmit={handleSubmit}>
+      <div className={styles.containerLogin}> <form onSubmit={handleSubmit}>
 
         <label className={styles.campo}>
           <span>E-mail:</span>
@@ -63,7 +63,8 @@ const LoginForm = () => {
             <p>Cadastro realizado com sucesso</p>
           </>
         }
-      </form>
+      </form></div>
+
     </section>
   );
 };
