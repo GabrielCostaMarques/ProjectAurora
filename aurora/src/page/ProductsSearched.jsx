@@ -11,13 +11,14 @@ import IndividualProduct from "../components/IndividualProduct";
 const ProductsSearched = () => {
     const [searchParams]=useSearchParams()
     
-    const URL = `http://localhost:3000/products?${searchParams}`
+    const URL = `https://fakestoreapi.com/products/categories?${searchParams}`
 
     const {getRequest}=useFetchItems('search',URL)
     const {isError,isLoading,data:items,refetch }=getRequest
 
     const prevSearchParamsRef = useRef();
-
+      
+      
     useEffect(() => {
         if (prevSearchParamsRef.current !== searchParams.toString()) {
             prevSearchParamsRef.current = searchParams.toString();

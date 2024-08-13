@@ -24,14 +24,14 @@ const IndividualProduct = ({data, error,loading}) => {
                 ) : (
                     data.map((product) => (
                         <div key={product.id} className={styles.ItemProduct}>
-                            <span>{product.oferta}</span>
-                            <img src={product.image} alt={product.name}></img>
+                            <span>{product.category}</span>
+                            <img src={product.image} alt={product.title}></img>
                             <div className={styles.BlockNamePrice}>
-                                <h5>{product.name}</h5>
+                                <h5>{product.title}</h5>
                                 <h4>R$ {product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h4>
                                 
                             </div>
-                            {product.oferta && <Link to={`/products/${product.id}`}><button>Ver Detalhes</button></Link>}
+                            {product.category && <Link to={`/products/${product.id}`}><button>Ver Detalhes</button></Link>}
                         </div>
                     ))
                 )

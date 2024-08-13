@@ -19,7 +19,7 @@ import Teste from './page/Teste'
 import Login from './page/Login/Login'
 import useAuthentication from './hooks/useAuthentication'
 import { onAuthStateChanged } from 'firebase/auth'
-
+import Loader from './components/Loader/Loader';
 
 
 function App() {
@@ -28,27 +28,28 @@ function App() {
 
 
   //segmentação para que quando o usuário estiver carregando, nada do blog carregue antes de o user receber alguma info
-  const loadingUser=user===undefined
-  useEffect(()=>{
-    onAuthStateChanged(auth,(user)=>{ 
+   const loadingUser = user === undefined
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
       setUser(user)
     })
-  },[auth])
-  
+  }, [auth])
+
   if (loadingUser) {
-    return <p>Carregando...</p>
+    return<Loader/>
+
   }
 
   return (
     <>
-      <AuthProvider value={ {user} }>
+      <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/signUp" element={user?<Navigate to="/"/>:<SignUp/>} />
+            <Route path="/signUp" element={user ? <Navigate to="/" /> : <SignUp />} />
             <Route path="/signIn" element={< Login />} />
-            <Route path="/carrinho" element={!user?<Navigate to="/"/>:<BuyCar/>} />
+            <Route path="/carrinho" element={!user ? <Navigate to="/" /> : <BuyCar />} />
             <Route path="/teste" element={<Teste />} />
             <Route path="/search" element={<ProductsSearched />} />
             <Route path="/products/:id" element={<ProductSingle />} />

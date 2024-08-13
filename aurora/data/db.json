@@ -60,28 +60,28 @@
     {
       "name": "Padrão",
       "price": 1300.99,
-      "image": "../dist/assets/bolsaforTable.png",
+      "image": "./assets/bolsaforTable.png",
       "oferta": "teste",
       "id": "d5dc"
     },
     {
       "name": "Violetinha",
       "price": 400,
-      "image": "../dist/assets/bolsaforTable.png",
+      "image": "./assets/bolsaforTable.png",
       "oferta": "ofertinha",
       "id": "c9bf"
     },
     {
       "name": "Mini Bolsinha",
       "price": 569,
-      "image": "../dist/assets/bolsaforTable.png",
+      "image": "./assets/bolsaforTable.png",
       "oferta": "teste",
       "id": "c5634"
     },
     {
       "name": "Pretiha",
       "price": 300,
-      "image": "../dist/assets/bolsaforTable.png",
+      "image": "./assets/bolsaforTable.png",
       "oferta": "teste",
       "id": "c3t46"
     }
@@ -89,15 +89,15 @@
   "imgSlider": [
     {
       "id": "0",
-      "image": "./dist/assets/capa-slider-main.jpg"
+      "image": "../../assets/capa-slider-main.jpg"
     },
     {
       "id": "1",
-      "image": "./dist/assets/bag-red.jpg"
+      "image": "../../assets/bag-red.jpg"
     },
     {
       "id": "2",
-      "image": "./dist/assets/modelWithBag.jpg"
+      "image": "../../assets/modelWithBag.jpg"
     }
   ]
 }

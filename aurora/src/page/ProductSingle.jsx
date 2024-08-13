@@ -3,18 +3,21 @@ import { useFetchItems } from "../hooks/useFetchQuery"
 
 import styles from '../components/ProductsTable/ProductsTable.module.css';
 
+import Loader from "../components/Loader/Loader";
 const ProductSingle = () => {
 
 
 
 
-
     const { id } = useParams()
-    const URL = " http://localhost:3000/products/" + id
+    const URL = " https://fakestoreapi.com/products/" + id
 
     const { getRequest } = useFetchItems('productSingle', URL);
     const { isLoading, isError, data: items } = getRequest
+    console.log(isLoading);
 
+    
+    
     return (
         <section className={styles.BodyProducts}>
             <h2>CONHEÇA MAIS DE NOSSOS PRODUTOS</h2>
@@ -28,25 +31,18 @@ const ProductSingle = () => {
 
 
                         isLoading ? (
-                            Array(1).fill().map((_, index) => (
-                                <div key={index} className={`${styles.ItemProduct}`}>
-                                    <div className={styles.SkeletonImage}></div>
-                                    <div className={styles.BlockNamePrice}>
-                                        <div className={styles.SkeletonText}></div>
-                                        
-                                    </div>
-                                </div>
-                            ))
+                            <Loader/>
                         ) : (
                             items && (
                                 <div key={items.id} className={styles.ItemProduct}>
-                                    <img src={items.image} alt={items.name}></img>
-                                    <div className={styles.BlockNamePrice}>
-                                        <h5>{items.name}</h5>
-                                        <h4>R$ {items.price}</h4>
-                                    </div>
-
+                                <span>{items.category}</span>
+                                <img src={items.image} alt={items.title}></img>
+                                <div className={styles.BlockNamePrice}>
+                                    <h5>{items.title}</h5>
+                                    <h4>R$ {items.price.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h4>
+                                    
                                 </div>
+                            </div>
                             )
                         )
 

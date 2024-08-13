@@ -2,34 +2,36 @@ import styles from './BodyScreen1.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, EffectFade } from "swiper/modules"
 import "swiper/css/effect-fade"
-import { useFetchItems } from '../../hooks/useFetchQuery'
+import capaSliderMain from '../../assets/capa-slider-main.jpg';
+import bagRed from '../../assets/bag-red.jpg';
+import modelWithBag from '../../assets/modelWithBag.jpg';
 
- const URL = `http://localhost:3000/imgSlider`
+const images = [
+    { id: "0", image: capaSliderMain },
+    { id: "1", image: bagRed },
+    { id: "2", image: modelWithBag }
+];
 
 
 export default function BodyScreen1() {
-    const { getRequest } = useFetchItems('slides', URL,false);
-    const { isLoading, isError, data } = getRequest;
 
-    return (
-        <section className={styles.BodyMain}>
-            {isLoading && <p>Carregando...</p>}
-            {isError && <p>Erro ao carregar.</p>}
-            {!isLoading && !isError && (
+
+    return (    
+        <section className={styles.BodyMain}>                
                 <Swiper
                     pagination={{ clickable: true }}
                     slidesPerView={1}
                     modules={[Autoplay, EffectFade]}
                     autoplay={{ delay: 5000, disableOnInteraction: false }}
                     effect="fade"
-                >
-                    {data.map((item) => (
+                    >
+                    {images.map((item) => (
                         <SwiperSlide key={item.id}>
+                            
                             <img src={item.image} alt="slider Hero" className={styles.MainBodyContent} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
-            )}
         </section>
     )
 }
