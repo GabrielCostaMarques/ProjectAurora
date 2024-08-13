@@ -1,8 +1,8 @@
 .container {
     object-fit: cover !important;
-    background-image: url("../../assets/fundo-login.webp");
+    background-image: url("../../assets/modelWithBag.jpg");
     display: flex;
-    height: 89vh;
+    height: 87vh;
     justify-content: center;
     align-items: center;
     background-repeat: no-repeat;
@@ -14,7 +14,7 @@
     form {
 
         padding: 20px;
-        box-shadow: 0 1px 15px 0 var(--global-element-input-color);
+        box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.247);
         backdrop-filter: blur(13.5px);
         -webkit-backdrop-filter: blur(10.5px);
         border-radius: 10px;
@@ -23,6 +23,17 @@
         align-items: center;
         display: flex;
         flex-direction: column;
+
+        span{
+            color: var(var(---global-font-color));
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        input::placeholder  {
+            color: rgba(255, 255, 255, 0.514);
+        }
 
     }
 
