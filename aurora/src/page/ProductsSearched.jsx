@@ -11,7 +11,7 @@ import IndividualProduct from "../components/IndividualProduct";
 const ProductsSearched = () => {
     const [searchParams]=useSearchParams()
     
-    const URL = `https://fakestoreapi.com/products/categories?${searchParams}`
+    const URL = `https://fakestoreapi.com/products?${searchParams}`
 
     const {getRequest}=useFetchItems('search',URL)
     const {isError,isLoading,data:items,refetch }=getRequest

@@ -36,8 +36,7 @@ function App() {
   }, [auth])
 
   if (loadingUser) {
-    return<Loader/>
-
+    return <Loader/>
   }
 
   return (
@@ -57,10 +56,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </AuthProvider>
-
-
-
-
     </>
   )
 }

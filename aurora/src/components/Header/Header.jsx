@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuthValue } from '../../context/authContext';
 
-import { FaAlignJustify, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 
 
@@ -62,7 +62,7 @@ export default function Header() {
                         <span>LUXO</span>
                         <span>CUSTO BENEFÍCIO</span>
                     </nav>
-                    <div className={styles.toggleOpenMenu}><FaAlignJustify size={50}/></div>
+                    <div className={styles.toggleOpenMenu}><FaBars size={0}/></div>
                     <div className={styles.toggleCloseMenu}><FaTimes size={50}/></div>
 
                     <form className={styles.searchContainer}>
@@ -93,7 +93,7 @@ export default function Header() {
                         <span>LUXO</span>
                         <span>CUSTO BENEFÍCIO</span>
                     </nav>
-                  <FaAlignJustify className={styles.toggleOpenMenu}/>
+                  <FaBars className={styles.toggleOpenMenu}/>
                     <FaTimes className={styles.toggleCloseMenu}/>
                     <form onSubmit={handleSubmit} className={styles.searchContainer}>
                         <label>

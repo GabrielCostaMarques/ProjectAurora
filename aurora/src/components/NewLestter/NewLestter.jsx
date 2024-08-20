@@ -1,24 +1,17 @@
 import { useState } from "react";
 import styles from './NewLestter.module.css'
-import { useFetchItems } from "../../hooks/useFetchQuery";
-
-const URL="http://localhost:3000/users"
+import useFetchDocuments from "../../hooks/useFetchDocuments";
 
 export default function NewLestter() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
-
-    const {postRequest}=useFetchItems('users',URL)
-
-    const {isLoading}=postRequest
+    
+    const {newUserEmail,loading}=useFetchDocuments()
 
     const handleSubmit = (event) => {
         event.preventDefault()
-
-        const userData={
-            name,email
-        }
-        postRequest.mutate(userData)
+        const userData={name,email}
+        newUserEmail(userData,"users")
         setEmail("")
         setName("")
         
@@ -35,7 +28,7 @@ export default function NewLestter() {
                     <input type="email" name="email" placeholder="Email..." onChange={(e) => {setEmail(e.target.value)}} value={email} required/>
                 </label>
                 <label >
-                    {!isLoading?(<button type="submit">Enviar</button>):(<button type="submit" disabled>Carregando...</button>) }
+                    {!loading?(<button type="submit">Enviar</button>):(<button type="submit" disabled>Carregando...</button>) }
                 </label>
                 <label>
                     

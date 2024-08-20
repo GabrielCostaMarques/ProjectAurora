@@ -14,7 +14,7 @@ const ProductSingle = () => {
 
     const { getRequest } = useFetchItems('productSingle', URL);
     const { isLoading, isError, data: items } = getRequest
-    console.log(isLoading);
+
 
     
     
