@@ -3,6 +3,8 @@ import { useState } from "react";
 import styles from './Login.module.css'
 import { Link } from "react-router-dom";
 
+import { firebaseEmailException } from '../../exceptions/exceptionLogin'
+
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,9 +17,13 @@ const LoginForm = () => {
     setErrorMessage(null);
 
     const user = { email, password };
+
+
     await signIn(user)
-    if (error) {
-      setErrorMessage(error)
+
+    const validadeUser = firebaseEmailException(error)
+    if (validadeUser) {
+      setErrorMessage(validadeUser)
     }
   }
 
@@ -70,3 +76,4 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+  

@@ -38,13 +38,13 @@ const useAuthentication = () => {
     setLoading(true);
     setError(null);
     try {
+      setError(null);
       const login = await signInWithEmailAndPassword(auth, email, password);
       setLoading(false);
       return login.user;
     } catch (error) {
       setLoading(false);
-      setError(error.message);
-      throw error;
+      setError(error);
     }
   };
 

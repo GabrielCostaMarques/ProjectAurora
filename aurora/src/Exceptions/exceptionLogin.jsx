@@ -1,26 +1,21 @@
+const createErrorMessage = (message) => <p className='errorMessage'>{message}</p>;
 
 export const firebaseEmailException = (error) => {
-  let systemError;
-  if (error.code === "auth/email-already-in-use") {
-   systemError = "Endereço de E-mail já usado";
+  switch (error.code) {
+    case "auth/email-already-in-use":
+      return createErrorMessage("Endereço de E-mail já usado");
+    case "auth/weak-password":
+      return createErrorMessage("Senha deve ter pelo menos 6 caracteres");
+    case "auth/invalid-credential":
+      return createErrorMessage("Email ou senha incorretos");
+    default:
+      return createErrorMessage("Houve algum erro");
   }
-  else if(error.code==="auth/weak-password"){
-    systemError="Senha deve ter pelo menos 6 caracteres"
-  }
-  else {
-    systemError = "Houve Algum erro";
-  }
-  return systemError;
 };
 
 export const validadePasswordException = (password, confirmPassword) => {
-  let functionSet
   if (password !== confirmPassword) {
-    functionSet = "As senhas precisam ser iguais";
+    return createErrorMessage("As senhas precisam ser iguais");
   }
-  return functionSet;
-}
-
-// export const validateSignIn=()=>{
-  
-// }
+  return null;
+};

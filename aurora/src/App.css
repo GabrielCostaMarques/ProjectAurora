@@ -8,5 +8,14 @@ a,span{
   color: black;
 }
 
+.errorMessage{
+  color: rgb(195, 0, 0);
+  background-color: rgb(255, 169, 169);
+  border:1px solid red;
+  font-weight: 200;
+  font-size: 12px;
+  padding: 5px 15px;
+}
+
 
 
