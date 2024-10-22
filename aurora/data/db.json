@@ -55,49 +55,5 @@
       "email": "gmarques@r11travel.com.br",
       "id": "mFdTQq8"
     }
-  ],
-  "products": [
-    {
-      "name": "Padrão",
-      "price": 1300.99,
-      "image": "./assets/bolsaforTable.png",
-      "oferta": "teste",
-      "id": "d5dc"
-    },
-    {
-      "name": "Violetinha",
-      "price": 400,
-      "image": "./assets/bolsaforTable.png",
-      "oferta": "ofertinha",
-      "id": "c9bf"
-    },
-    {
-      "name": "Mini Bolsinha",
-      "price": 569,
-      "image": "./assets/bolsaforTable.png",
-      "oferta": "teste",
-      "id": "c5634"
-    },
-    {
-      "name": "Pretiha",
-      "price": 300,
-      "image": "./assets/bolsaforTable.png",
-      "oferta": "teste",
-      "id": "c3t46"
-    }
-  ],
-  "imgSlider": [
-    {
-      "id": "0",
-      "image": "../../assets/capa-slider-main.jpg"
-    },
-    {
-      "id": "1",
-      "image": "../../assets/bag-red.jpg"
-    },
-    {
-      "id": "2",
-      "image": "../../assets/modelWithBag.jpg"
-    }
   ]
 }
