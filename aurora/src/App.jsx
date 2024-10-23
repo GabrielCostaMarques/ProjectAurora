@@ -11,7 +11,7 @@ import { BrowserRouter, Navigate, Route, Routes, } from 'react-router-dom'
 
 import Home from './page/Home'
 import BuyCar from './page/BuyCar'
-import ProductSingle from './page/ProductSingle'
+import ProductDetails from './page/ProductDetails/ProductDetails'
 import SignUp from './page/SignUpForm/SignUpForm'
 import ProductsSearched from './page/ProductsSearched'
 import NotFound from './page/NotFound'
@@ -32,7 +32,6 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setUser(user)
-      console.log(user);
       
     })
   }, [auth])
@@ -53,7 +52,7 @@ function App() {
             <Route path="/carrinho" element={!user ? <Navigate to="/" /> : <BuyCar />} />
             <Route path="/teste" element={<Teste />} />
             <Route path="/search" element={<ProductsSearched />} />
-            <Route path="/products/:id" element={<ProductSingle />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

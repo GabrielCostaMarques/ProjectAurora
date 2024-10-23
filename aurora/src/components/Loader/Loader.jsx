@@ -2,10 +2,12 @@ import "./loader.css"
 
 const Loader = () => {
   return (
-    <div className="load">
-    <span className='loader'></span>
-    <p>Carregando</p>
-  </div>
+
+    <div className="load"> <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <br></br>
+    <span>Carregando</span>
+    </div>
+
   )
 }
 
