@@ -2,7 +2,7 @@ import styles from './ProductsTable.module.css';
 import { useFetchItems } from '../../hooks/useFetchQuery';
 import IndividualProduct from '../IndividualProduct';
 
-const URL = "https://fakestoreapi.com/products?limit=20";
+const URL = "https://fakestoreapi.com/products?limit=8";
 export default function ProductsTable() {
     const { getRequest } = useFetchItems('products', URL);
 

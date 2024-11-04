@@ -15,7 +15,6 @@ import ProductDetails from './page/ProductDetails/ProductDetails'
 import SignUp from './page/SignUpForm/SignUpForm'
 import ProductsSearched from './page/ProductsSearched'
 import NotFound from './page/NotFound'
-import Teste from './page/Teste'
 import Login from './page/Login/Login'
 import useAuthentication from './hooks/useAuthentication'
 import { onAuthStateChanged } from 'firebase/auth'
@@ -50,7 +49,6 @@ function App() {
             <Route path="/signUp" element={user ? <Navigate to="/" /> : <SignUp />} />
             <Route path="/signIn" element={< Login />} />
             <Route path="/carrinho" element={!user ? <Navigate to="/" /> : <BuyCar />} />
-            <Route path="/teste" element={<Teste />} />
             <Route path="/search" element={<ProductsSearched />} />
             <Route path="/products/:id" element={<ProductDetails />} />
             <Route path="*" element={<NotFound />} />
