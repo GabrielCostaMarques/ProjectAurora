@@ -27,7 +27,7 @@ function App() {
 
 
   //segmentação para que quando o usuário estiver carregando, nada do blog carregue antes de o user receber alguma info
-   const loadingUser = user === undefined
+   const loadingUser = user ===undefined
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setUser(user)
