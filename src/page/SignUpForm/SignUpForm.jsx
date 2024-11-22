@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { validadePasswordException } from "../../exceptions/exceptionLogin";
+import { validadePasswordException } from "../../Exceptions/exceptionLogin";
 import styles from './SignUpForm.module.css';
 
 import useAuthentication from '../../hooks/useAuthentication';
