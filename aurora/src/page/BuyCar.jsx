@@ -11,7 +11,7 @@ const BuyCar = () => {
   return (
     <section>
       <div>
-        <h1>CARRINHO</h1>
+        <h1>CARRINHO TESTE</h1>
       </div>
     </section>
   );
