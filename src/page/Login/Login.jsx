@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from './Login.module.css'
 import { Link } from "react-router-dom";
 
-import { firebaseEmailException } from '../../exceptions/exceptionLogin'
+import { firebaseEmailException } from '../../expection/exception'
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
