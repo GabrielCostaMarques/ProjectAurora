@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { app, db } from "../config/firebase";
 import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { firebaseEmailException } from '../exceptions/exceptionLogin';
+import { firebaseEmailException } from '../expection/exception';
 
 
 
